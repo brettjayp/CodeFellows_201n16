@@ -10,6 +10,11 @@ var guessThreeDee, guessScubaDiving, guessTechJob, guessMOS, guessDog, userName 
 function guessMe (varName, answer, question, ifCorrect, ifIncorrect) {
     varName = prompt(question).toLowerCase();
     // console.log(`user input : ${varName}`);
+    while (!(varName === 'y' || varName === 'yes' || varName === 'n' || varName === 'no')) {
+        alert('Please enter either a y/n or yes/no answer, thank you. Try again!');
+        // console.log('This was an INVALID answer. Try again.');
+        varName = prompt(question).toLowerCase();
+    }
     if (answer === 'y'){
         if (varName === 'y' || varName === 'yes') {
             alert(`${ifCorrect}`);
@@ -17,9 +22,6 @@ function guessMe (varName, answer, question, ifCorrect, ifIncorrect) {
         } else if (varName === 'n' || varName === 'no') {
             alert(`${ifIncorrect}`);
             // console.log('This was NOT the correct answer.');
-        } else {
-            alert('Please enter either a y/n or yes/no answer next time. Thank you!');
-            // console.log('This was an INVALID answer.');
         }
     } else {
         if (varName === 'n' || varName === 'no') {
@@ -28,9 +30,6 @@ function guessMe (varName, answer, question, ifCorrect, ifIncorrect) {
         } else if (varName === 'y' || varName === 'yes') {
             alert(`${ifIncorrect}`);
             // console.log('This was NOT the CORRECT answer.');
-        } else {
-            alert('Please enter either a y/n or yes/no answer next time. Thank you!');
-            // console.log('This was an INVALID answer.');
         }
     }
 
