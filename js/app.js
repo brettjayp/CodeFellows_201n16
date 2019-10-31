@@ -10,11 +10,11 @@ var guessThreeDee, guessScubaDiving, guessTechJob, guessMOS, guessDog, userName 
 function guessMe (varName, answer, question, ifCorrect, ifIncorrect) {
     varName = prompt(question).toLowerCase();
     // console.log(`user input : ${varName}`);
-    if (answer == 'y'){
-        if (varName == 'y' || varName == 'yes') {
+    if (answer === 'y'){
+        if (varName === 'y' || varName === 'yes') {
             alert(`${ifCorrect}`);
             // console.log('This was the CORRECT answer.');
-        } else if (varName == 'n' || varName == 'no') {
+        } else if (varName === 'n' || varName === 'no') {
             alert(`${ifIncorrect}`);
             // console.log('This was NOT the correct answer.');
         } else {
@@ -22,10 +22,10 @@ function guessMe (varName, answer, question, ifCorrect, ifIncorrect) {
             // console.log('This was an INVALID answer.');
         }
     } else {
-        if (varName == 'n' || varName == 'no') {
+        if (varName === 'n' || varName === 'no') {
             alert(`${ifCorrect}`);
             // console.log('This was the correct answer.');
-        } else if (varName == 'y' || varName == 'yes') {
+        } else if (varName === 'y' || varName === 'yes') {
             alert(`${ifIncorrect}`);
             // console.log('This was NOT the CORRECT answer.');
         } else {
@@ -33,7 +33,7 @@ function guessMe (varName, answer, question, ifCorrect, ifIncorrect) {
             // console.log('This was an INVALID answer.');
         }
     }
-    
+
 }
 
 // FORCED user interaction
