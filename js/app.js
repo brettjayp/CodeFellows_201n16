@@ -6,10 +6,10 @@
 // declare global variables
 var guessThreeDee, guessScubaDiving, guessTechJob, guessMOS, guessDog = '';
 
-// establish y/n function
+// establish y/n function for guessing game questions
 function guessMe (variable, answer, question, ifYes, ifNo) {
     variable = prompt(question).toLowerCase();
-    console.log(`${variable} : user input for `);
+    console.log(`user input : ${variable}`);
 }
 
 alert('Hello, play game, about me');
