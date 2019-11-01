@@ -197,7 +197,7 @@ for (randomNumberAttempt; randomNumberAttempt < 4; randomNumberAttempt++) {
     }
     if (parseInt(randomNumberGuess) === randomNumber) {
         alert(`Great job, ${userName}! You guessed it right! Have you thought about being a street performer? You could do some great math tricks!`);
-        randomNumberAttempt = 4;
+        break;
     } else if (randomNumberGuess < randomNumber - 10 && randomNumberAttempt < 3) {
         alert(`Hey, great guess ${userName}, but you're not very close. Your guess was more that 10 too low.\nYou've guessed ${randomNumberAttempt + 1} out of 4 times, try again!`);
     } else if (randomNumberGuess < randomNumber - 10 && randomNumberAttempt === 3) {
