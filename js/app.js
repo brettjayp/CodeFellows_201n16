@@ -4,7 +4,8 @@
 'use strict';
 
 // declare global variables
-var guessThreeDee, guessScubaDiving, guessTechJob, guessMOS, guessDog, userName = '';
+let guessThreeDee, guessScubaDiving, guessTechJob, guessMOS, guessDog, userName = '';
+let tallyCorrect = 0;
 
 // establish y/n function for guessing game questions
 // Currently, this function is disabled. This is due to a class requirement.
@@ -60,6 +61,7 @@ while (!(guessThreeDee === 'y' || guessThreeDee === 'yes' || guessThreeDee === '
 if (answer === 'y'){
     if (guessThreeDee === 'y' || guessThreeDee === 'yes') {
         alert('Yes! I also have an Anycubic Photon, and have two more printers ordered.');
+        tallyCorrect++;
         // console.log('This was the CORRECT answer.');
     } else if (guessThreeDee === 'n' || guessThreeDee === 'no') {
         alert('Actually, I do! I also have another printer, and two more coming soon.');
@@ -68,6 +70,7 @@ if (answer === 'y'){
 } else {
     if (guessThreeDee === 'n' || guessThreeDee === 'no') {
         alert('Yes! I also have an Anycubic Photon, and have two more printers ordered.');
+        tallyCorrect++;
         // console.log('This was the correct answer.');
     } else if (guessThreeDee === 'y' || guessThreeDee === 'yes') {
         alert('Actually, I do! I also have another printer, and two more coming soon.');
@@ -86,6 +89,7 @@ while (!(guessScubaDiving === 'y' || guessScubaDiving === 'yes' || guessScubaDiv
 if (answer === 'y'){
     if (guessScubaDiving === 'y' || guessScubaDiving === 'yes') {
         alert('Correct! I got certified as a divemaster while I lived on Oahu, I went on 70 dives while I was training!');
+        tallyCorrect++;
         // console.log('This was the CORRECT answer.');
     } else if (guessScubaDiving === 'n' || guessScubaDiving === 'no') {
         alert('I am, actually! I had a really great time getting the ceritification, I was living on Oahu at the time!');
@@ -94,6 +98,7 @@ if (answer === 'y'){
 } else {
     if (guessScubaDiving === 'n' || guessScubaDiving === 'no') {
         alert('Correct! I got certified as a divemaster while I lived on Oahu, I went on 70 dives while I was training!');
+        tallyCorrect++;
         // console.log('This was the correct answer.');
     } else if (guessScubaDiving === 'y' || guessScubaDiving === 'yes') {
         alert('I am, actually! I had a really great time getting the ceritification, I was living on Oahu at the time!');
@@ -112,6 +117,7 @@ while (!(guessTechJob === 'y' || guessTechJob === 'yes' || guessTechJob === 'n' 
 if (answer === 'y'){
     if (guessTechJob === 'y' || guessTechJob === 'yes') {
         alert('That\'s right! I was a data center technician for Amazon.');
+        tallyCorrect++;
         // console.log('This was the CORRECT answer.');
     } else if (guessTechJob === 'n' || guessTechJob === 'no') {
         alert('I have, in fact! I was an apprentice with Amazon as a data center technician.');
@@ -120,6 +126,7 @@ if (answer === 'y'){
 } else {
     if (guessTechJob === 'n' || guessTechJob === 'no') {
         alert('That\'s right! I was a data center technician for Amazon.');
+        tallyCorrect++;
         // console.log('This was the correct answer.');
     } else if (guessTechJob === 'y' || guessTechJob === 'yes') {
         alert('I have, in fact! I was an apprentice with Amazon as a data center technician.');
@@ -138,6 +145,7 @@ while (!(guessMOS === 'y' || guessMOS === 'yes' || guessMOS === 'n' || guessMOS 
 if (answer === 'y'){
     if (guessMOS === 'y' || guessMOS === 'yes') {
         alert('Great! I was an infantryman until April, 2018, stationed at JBLM.');
+        tallyCorrect++;
         // console.log('This was the CORRECT answer.');
     } else if (guessMOS === 'n' || guessMOS === 'no') {
         alert('Actually, yes, I was. I was stationed at JBLM until April last year as an infantryman.');
@@ -146,6 +154,7 @@ if (answer === 'y'){
 } else {
     if (guessMOS === 'n' || guessMOS === 'no') {
         alert('Great! I was an infantryman until April, 2018, stationed at JBLM.');
+        tallyCorrect++;
         // console.log('This was the correct answer.');
     } else if (guessMOS === 'y' || guessMOS === 'yes') {
         alert('Actually, yes, I was. I was stationed at JBLM until April last year as an infantryman.');
@@ -164,6 +173,7 @@ while (!(guessDog === 'y' || guessDog === 'yes' || guessDog === 'n' || guessDog 
 if (answer === 'y'){
     if (guessDog === 'y' || guessDog === 'yes') {
         alert(`She is, yes! She has so much energy! Her name is Thora.\nThank you for playing my game, ${userName}!`);
+        tallyCorrect++;
         // console.log('This was the CORRECT answer.');
     } else if (guessDog === 'n' || guessDog === 'no') {
         alert(`Acutally I do! She's almost a year and half, and has so much energy. Her name is Thora.\nThank you for playing my game, ${userName}!`);
@@ -172,6 +182,7 @@ if (answer === 'y'){
 } else {
     if (guessDog === 'n' || guessDog === 'no') {
         alert(`She is, yes! She has so much energy! Her name is Thora.\nThank you for playing my game, ${userName}!`);
+        tallyCorrect++;
         // console.log('This was the correct answer.');
     } else if (guessDog === 'y' || guessDog === 'yes') {
         alert(`Acutally I do! She's almost a year and half, and has so much energy. Her name is Thora.\nThank you for playing my game, ${userName}!`);
@@ -197,6 +208,7 @@ for (randomNumberAttempt; randomNumberAttempt < 4; randomNumberAttempt++) {
     }
     if (parseInt(randomNumberGuess) === randomNumber) {
         alert(`Great job, ${userName}! You guessed it right! Have you thought about being a street performer? You could do some great math tricks!`);
+        tallyCorrect++;
         break;
     } else if (randomNumberGuess < randomNumber - 10 && randomNumberAttempt < 3) {
         alert(`Hey, great guess ${userName}, but you're not very close. Your guess was more that 10 too low.\nYou've guessed ${randomNumberAttempt + 1} out of 4 times, try again!`);
@@ -219,10 +231,39 @@ for (randomNumberAttempt; randomNumberAttempt < 4; randomNumberAttempt++) {
     }
 }
 
+// 
+// QUESTION SEVEN:
+// - Could have many possible correct answers, stored in an array.
+// - User has 6 attempts.
+// - Guesses end either upon exhaustion of 6 attempts, or user guessing any correct answer.
+// - Upon ending the game (win or lose), display all the correct answers to the user.
+// - Consider using a loop of some sort for this question.
+// 
+let cookieIngredients = ['salmon', 'water', 'cornmeal', 'oatmeal', 'baking powder'];
+let cookieAttempts = 0;
+let cookieGuesses = [];
+console.log(`cookieIngredients game: array values are ${cookieIngredients}`);
+alert(`${userName}, one of the labs we're going to do in this class is called Salmon Cookies. I've found a recipe online for them.\nHow about we play a guessing game? Try to guess one of the ingredients in salmon cookies!\nI'll give you six attempts.`);
+let cookieGuess = prompt('Can you guess one of the ingredients in salmon cookies?').toLowerCase();
+console.log(`In the cookieIngredients game, the user just guessed: ${cookieGuess}.`);
+cookieGuesses.push(cookieGuess);
+for (cookieAttempts; cookieAttempts < 6; cookieAttempts++) {
+    if (cookieIngredients.indexOf(cookieGuess) > -1) {
+        alert(`Wow, great job ${userName}! You must be pretty good in a kitchen already if you were able to guess that!\nThe ingredients for the salmon cookies I found online are: ${cookieIngredients}\nIt took you ${cookieAttempts + 1} attempts to guess correctly.`);
+        tallyCorrect++;
+        cookieAttempts = 6;
+    } else if (cookieAttempts < 5) {
+        cookieGuess = prompt(`Sorry ${userName}, that's not one of the ingredients. You've guessed ${cookieAttempts + 1} out of 6 times. You can keep guessing!`).toLowerCase();
+        console.log(`In the cookieIngredients game, the user just guessed: ${cookieGuess}.`);
+        cookieGuesses.push(cookieGuess);
+    } else if (cookieAttempts === 5) {
+        alert(`Bummer ${userName}, you've guessed 6 times, and that still wasn't correct. Thank you for playing though!\nThe ingredients in the cookies I found are: ${cookieIngredients}`);
+    }
+}
 
-
-
-
+// 
+// Just a simple alert to tell the visitor that I was keeping score, and what their score was.
+alert(`${userName}, I'm sorry I didn't tell you this before, but I've been keeping a score of how many questions you were able to answer correctly.\nOut of 7 questions you could answer, you scored ${tallyCorrect}.`);
 
 
 // end of line, do not proceed
