@@ -195,6 +195,28 @@ for (randomNumberAttempt; randomNumberAttempt < 4; randomNumberAttempt++) {
         alert(`Woah, ${userName}! This is a numbers game, and you entered ${randomNumberGuess} instead. Please enter a number! Remember, guess from 0 to 100.`);
         randomNumberGuess = prompt('Try to guess a number again, up to 100. Good luck!');
     }
+    if (parseInt(randomNumberGuess) === randomNumber) {
+        alert(`Great job, ${userName}! You guessed it right! Have you thought about being a street performer? You could do some great math tricks!`);
+        randomNumberAttempt = 4;
+    } else if (randomNumberGuess < randomNumber - 10 && randomNumberAttempt < 3) {
+        alert(`Hey, great guess ${userName}, but you're not very close. Your guess was more that 10 too low.\nYou've guessed ${randomNumberAttempt + 1} out of 4 times, try again!`);
+    } else if (randomNumberGuess < randomNumber - 10 && randomNumberAttempt === 3) {
+        alert(`Hey, great guess ${userName}, but you're not very close. Your guess was more that 10 too low.\nYou've guessed ${randomNumberAttempt + 1} out of 4 times, the answer was ${randomNumber}.`);
+    } else if (randomNumberGuess > randomNumber + 10 && randomNumberAttempt < 3) {
+        alert(`Hey, great guess ${userName}, but you're not very close. Your guess was more that 10 too high.\nYou've guessed ${randomNumberAttempt + 1} out of 4 times, try again!`);
+    } else if (randomNumberGuess > randomNumber + 10 && randomNumberAttempt === 3) {
+        alert(`Hey, great guess ${userName}, but you're not very close. Your guess was more that 10 too high.\nYou've guessed ${randomNumberAttempt + 1} out of 4 times, the answer was ${randomNumber}.`);
+    } else if (randomNumberGuess < randomNumber && randomNumberAttempt < 3) {
+        alert(`Oh darn, you're so close ${userName}! Your guess was a little bit low.\nYou've guessed ${randomNumberAttempt + 1} out of 4 times, try again!`);
+    } else if (randomNumberGuess < randomNumber && randomNumberAttempt === 3) {
+        alert(`Oh darn, you're so close ${userName}! Your guess was a little bit low.\nYou've guessed ${randomNumberAttempt + 1} out of 4 times, the answer was ${randomNumber}.`);
+    } else if (randomNumberGuess > randomNumber && randomNumberAttempt < 3) {
+        alert(`Oh darn, you're so close ${userName}! Your guess was a little bit high.\nYou've guessed ${randomNumberAttempt + 1} out of 4 times, try again!`);
+    } else if (randomNumberGuess > randomNumber && randomNumberAttempt === 3) {
+        alert(`Oh darn, you're so close ${userName}! Your guess was a little bit high.\nYou've guessed ${randomNumberAttempt + 1} out of 4 times, the answer was ${randomNumber}.`);
+    } else if (randomNumberGuess + 10 < randomNumber) {
+        alert('return if randomNumberGuess + 10 < randomNumber is met');
+    }
 }
 
 
