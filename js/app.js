@@ -179,4 +179,28 @@ if (answer === 'y'){
     }
 }
 
+// 
+// QUESTION SIX:
+// - Takes in a NUMERIC input as the answer, prompting the user to guess a number
+// - Four chances to answer
+// - Uses alert to indicate if guess is too high or too low
+// - After all attempts exhausted, gives the user the answer
+// 
+let randomNumber = Math.floor(Math.random() * 100);
+let randomNumberAttempt = 0;
+console.log(`randomNumber game: random number assigned is: ${randomNumber}`);
+for (randomNumberAttempt; randomNumberAttempt < 4; randomNumberAttempt++) {
+    let randomNumberGuess = prompt('Let\'s play a short game! Try to guess a number, up to 100. You\'ll have 4 attempts, good luck!');
+    while (isNaN(randomNumberGuess)) {
+        alert(`Woah, ${userName}! This is a numbers game, and you entered ${randomNumberGuess} instead. Please enter a number! Remember, guess from 0 to 100.`);
+        randomNumberGuess = prompt('Try to guess a number again, up to 100. Good luck!');
+    }
+}
+
+
+
+
+
+
+
 // end of line, do not proceed
