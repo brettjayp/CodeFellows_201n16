@@ -66,7 +66,7 @@ if (answer === 'y'){
         // console.log('This was NOT the correct answer.');
     }
 } else {
-    if (guessThreeDee === 'n' || varguessThreeDeeame === 'no') {
+    if (guessThreeDee === 'n' || guessThreeDee === 'no') {
         alert('Yes! I also have an Anycubic Photon, and have two more printers ordered.');
         // console.log('This was the correct answer.');
     } else if (guessThreeDee === 'y' || guessThreeDee === 'yes') {
@@ -166,7 +166,7 @@ if (answer === 'y'){
         alert(`She is, yes! She has so much energy! Her name is Thora.\nThank you for playing my game, ${userName}!`);
         // console.log('This was the CORRECT answer.');
     } else if (guessDog === 'n' || guessDog === 'no') {
-        alert(`Acutally I do! She\'s almost a year and half, and has so much energy. Her name is Thora.\nThank you for playing my game, ${userName}!`);
+        alert(`Acutally I do! She's almost a year and half, and has so much energy. Her name is Thora.\nThank you for playing my game, ${userName}!`);
         // console.log('This was NOT the correct answer.');
     }
 } else {
@@ -174,7 +174,7 @@ if (answer === 'y'){
         alert(`She is, yes! She has so much energy! Her name is Thora.\nThank you for playing my game, ${userName}!`);
         // console.log('This was the correct answer.');
     } else if (guessDog === 'y' || guessDog === 'yes') {
-        alert(`Acutally I do! She\'s almost a year and half, and has so much energy. Her name is Thora.\nThank you for playing my game, ${userName}!`);
+        alert(`Acutally I do! She's almost a year and half, and has so much energy. Her name is Thora.\nThank you for playing my game, ${userName}!`);
         // console.log('This was NOT the CORRECT answer.');
     }
 }
