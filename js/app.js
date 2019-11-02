@@ -2,151 +2,61 @@
 
 //console.log('proof of life');
 
-/*var userInfo= prompt ("What is your name?");
+var userInfo= prompt ('What is your name?');
 //console.log('userInfo: ' , userInfo);
 
-alert("welcome " + userInfo);
+alert('welcome ' + userInfo);
 
-var aboutCoding= prompt ("Are you ok with this coding thing?").toLowerCase(); //aboutCoding= aboutCoding.toLowerCase();
+function guessingGame(question,ifCorrect,ifIncorrect){
+    var answer= prompt(question).toLowerCase();
+    console.log(answer);
 
-
-//console.log('aboutCoding: ' , aboutCoding);
-
-if(aboutCoding ==='yes' 
-|| aboutCoding === "y") 
-
-{
-    alert ("Great you are doing good");
-    //console.log ('I like it too');
-
-}
-
-else {
-    
-    alert ("Do not worry. we are on the same path");
-    //console.log('you should check it out');
-
-}
-
-var aboutCountry= prompt ("Are you from Jamica?").toLowerCase(); //aboutCoding= aboutCoding.toLowerCase();
-
-//prompt ("are you from Jamaica?");
-
-if(aboutCountry ==='yes' 
-|| aboutCountry === "y") 
-
-{
-    alert ("cool! I have been in Jamaica last year. you have a beautiful country");
-    //console.log ('I like it too');
-
-}
-
-else {
-    
-    alert ("I thought yoy were from Jamica");
-    console.log('you should check it out');
-
-}
-
-var aboutMarriage= prompt ("by the way, Are you from married?").toLowerCase(); //aboutCoding= aboutCoding.toLowerCase();
-
-//prompt ("are you from Jamaica?");
-
-if(aboutMarriage ==='yes' 
-|| aboutMarriage === "y") 
-
-{
-    alert ("Great!");
-    //console.log ('I like it too');
-
-}
-
-else {
-    
-    alert ("just like me");
-    console.log('you should check it out');
-
-}
-
-var whatAboutSoccer= prompt ("Do you follow soccer matches?").toLowerCase(); //aboutCoding= aboutCoding.toLowerCase();
-
-//prompt ("are you from Jamaica?");
-
-if(whatAboutSoccer ==='yes' 
-|| whatAboutSoccer === "y") 
-
-{
-    alert ("Nice! I am a soccer fan too!");
-    //console.log ('I like it too');
-
-}
-
-else {
-    
-    alert ("why? you should at least watch Champions league");
-    console.log('you should check it out');
-
-}
-
-var aboutHobby= prompt ("Do you like collecting stamps?").toLowerCase(); //aboutCoding= aboutCoding.toLowerCase();
-
-//prompt ("are you from Jamaica?");
-
-if(aboutHobby ==='yes' 
-|| aboutHobby === "y") 
-
-{
-    alert ("I had a great collection too!");
-    //console.log ('I like it too');
-
-}
-
-else {
-    
-    alert ("So, what is your hobby?");
-    console.log('you should check it out');
-
-}*/
-
-/*console.log("before parseint" +typeof userGuess)
-console.log("after parseint " + typeof userGuess)*/
-
-var myNumber=5;
-//var yourNumber=0;
-
-for (var i=0; i < 4 ; i++) {
-    
-    var userGuess= prompt ("Do you know what number I am thinking about?")
-    userGuess= parseInt(userGuess)
-
-    if(myNumber === userGuess)  {
-    alert ("Wow! you got it. it is " + userGuess);
-        //console.log("hello")
-
-        break;
+    if(answer ==='yes' || answer === 'y') {
+        alert (ifCorrect);
+        correctAnswers ++;
+    } else {
+        alert (ifIncorrect);
     }
-
-    if(myNumber < userGuess) {
-        alert ("Too high guess lower number ");
-    
-    }
-
-     if(myNumber > userGuess) {
-        alert ("Too low guess higher number ");        
-    }
-
-    //if(myNumber === userGuess){break;}
-    /*else {
-        
-        alert ("Please try again");
-
-    }*/
 }
-    //alert ("outside the for loop ");
 
+var correctAnswers = 0;
 
+guessingGame('Are you ok with this coding thing?','Great you are doing good.','Do not worry, we are on the same path.');
+guessingGame('Are you from Jamaica?','cool! I have been in Jamaica last year. you have a beautiful country','I thought you were from Jamica');
+guessingGame('by the way, Are you married?','Great!','just like me');
+guessingGame('Do you follow soccer matches?','Nice! I am a soccer fan too!','why? you should at least watch Champions league');
+guessingGame('Do you like collecting stamps?','I had a great collection too!','So, what is your hobby?');
 
+function guessNumber(aNumber){
 
-//5alert("Thank you " + userInfo + " for your time. Good bye");
+    for (var i=0; i < 4 ; i++) {
+        var userGuess= prompt ('Do you know what number I am thinking about?');
+        userGuess= parseInt(userGuess);
 
+        if(aNumber === userGuess) {
+            alert ('Wow! you got it. it is ' + userGuess);
+            correctAnswers++;
+            break;
+        } else if (aNumber < userGuess) {
+            if (i === 3) {
+                alert('The answer was ' + aNumber);
+            } else {
+                alert ('Too high guess lower number ');
+            }
+        } else {
+            if (i === 3) {
+                alert('The answer was ' + aNumber);
+            } else {
+                alert ('Too low guess higher number ');
+            }
+        }
+    }
+}
 
+guessNumber(5);
+
+if (correctAnswers === 1){
+    alert('Thank you ' + userInfo + ' for your time. You have answered ' + correctAnswers + ' question correctly. Good bye');
+} else {
+    alert('Thank you ' + userInfo + ' for your time. You have answered ' + correctAnswers + ' questions correctly. Good bye');
+}
