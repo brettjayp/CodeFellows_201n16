@@ -3,6 +3,16 @@ html {
     color: darkgray;
     text-align: center;
 }
+
+main{
+    background-color: aqua;
+    color: darkblue;
+    text-align: left;
+    width: 960px;
+    padding: 20px;
+    margin: 0 auto;
+    border: solid white 5px;
+}
 h1 {
     color: black;
 }
