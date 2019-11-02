@@ -3,11 +3,19 @@ body
     background-color: royalblue;
 }
 
-.unorderedList{
+p{
 
     background-color: yellow;
+    text-align:  auto;
 }
 
-ol li{
+h1{
     color: red;
+    font-size: 50px;
+    text-align: center;
+}
+
+h2{
+    color: rgb(0, 255, 221);
+    font-size: 30px;
 }
