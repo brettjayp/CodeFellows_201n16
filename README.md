@@ -26,3 +26,7 @@ Brett Packard, CodeFellows seattle-201n16, lab 02 03 04 05b, About Me
 - Added question seven, a guessing game where you guess a value that is in an array of possible answers. I used .indexOf(), which may be 'out-of-scope', but I do feel good about using it because I took the time to teach other classmates the logic behind .indexOf() on the whiteboard in terms of what they would be using otherwise. I gave them the logic using in-scope terms.
 - Added a very easy tally system for the game.
 
+Refactored the javaScript to enable functions
+added the tally feature to about me games
+Fixed bugs
+added additional CSS stylings
