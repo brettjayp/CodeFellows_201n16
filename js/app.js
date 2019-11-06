@@ -36,7 +36,7 @@ guessMe('guessThreeDee','y','I like 3D printing, and have a couple printers. Do 
 guessMe('guessScubaDiving','y','I enjoy scuba diving. Do you think I\'m a divemaster?','Correct! I got certified as a divemaster while I lived on Oahu, I went on 70 dives while I was training!','I am, actually! I had a really great time getting the ceritification, I was living on Oahu at the time!');
 guessMe('guessTechJob','y','I work in technology and enjoy it. Have I worked in a data center?','That\'s right! I was a data center technician for Amazon.','I have, in fact! I was an apprentice with Amazon as a data center technician.');
 guessMe('guessMOS','y','I served in the military. Was I a grunt in the Army?','Great! I was an infantryman until April, 2018, stationed at JBLM.','Actually, yes, I was. I was stationed at JBLM until April last year as an infantryman.');
-guessMe('guessDog','y','I have one dog. Is she a German shepherd and a Siberian husky?',`She is, yes! She has so much energy! Her name is Thora.\nThank you for playing my game, ${userName}!`,`Acutally I do! She\'s almost a year and half, and has so much energy. Her name is Thora.\nThank you for playing my game, ${userName}!`);
+guessMe('guessDog','y','I have one dog. Is she a German shepherd and a Siberian husky?',`She is, yes! She has so much energy! Her name is Thora.\nThank you for playing my game, ${userName}!`,`Acutally I do! She's almost a year and half, and has so much energy. Her name is Thora.\nThank you for playing my game, ${userName}!`);
 
 let randomNumber = Math.floor(Math.random() * 100);
 let randomNumberAttempt = 0;

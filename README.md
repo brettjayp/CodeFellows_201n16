@@ -32,4 +32,7 @@ Brett Packard, CodeFellows seattle-201n16, lab 02 03 04 05b, About Me
 - Fixed bugs
 - Added additional CSS stylings
 
-2019 11 04 @ .
+2019 11 05 @ 1930
+- Added multiple backgroung media files
+- Selected and applied background image
+- Modified CSS to improve contrast against background
