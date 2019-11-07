@@ -15,3 +15,8 @@ testSumAndMultiply(4, 7, 5)
 undefined
 TEST FOR sumAndMultiply() PASSES
 
+... @ 1920 :
+testSumArray(testArray)
+undefined
+TEST FOR sumArray() PASSES
+
