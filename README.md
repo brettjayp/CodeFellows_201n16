@@ -42,7 +42,6 @@ TEST FOR multiplyAnyArray() PASSES
 multiplyAnyArray(testDynamicArray)
 Array [ 120, "The numbers 1,2,3,4,5 have a product of 120." ]
 
-
 ... @ 1939 :
  TEST FOR sum()
  TEST FOR multiply()
