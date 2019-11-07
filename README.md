@@ -5,4 +5,9 @@ testSum()
 undefined
  TEST FOR sum() PASSES
 
+ ... @ 1853 :
+ testMultiply()
+undefined
+ TEST FOR multiply() PASSES
+
  
