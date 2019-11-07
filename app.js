@@ -9,7 +9,9 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-
+    let allSum = a + b;
+    let string = `The sum of ${a} and ${b} is ${allSum}.`
+    return [allSum, string];
 }
 
 // Here is the test for sum(); uncomment it to run it
