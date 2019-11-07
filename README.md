@@ -25,7 +25,7 @@ Array [ 9, "2,3,4 was passed in as an array of numbers, and 9 is their sum." ]
 ... @ 19 :
 testMultiplyArray(testArray)
 undefined
-TEST FOR multiplyArray() PASSES tests.js:39:13
+TEST FOR multiplyArray() PASSES
 multiplyArray(testArray)
 Array [ 24, "The numbers 2,3,4 have a product of 24." ]
 
