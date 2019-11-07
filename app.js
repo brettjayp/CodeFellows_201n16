@@ -78,10 +78,7 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-    let allSum = 0;
-    for (let i = 0; i < sumArr.length; i++){
-        allSum = sum(sum(sumArr[0],sumArr[1])[0],sumArr[2])[0]
-    }
+    let allSum = sum(sum(sumArr[0],sumArr[1])[0],sumArr[2])[0];
     let string = `${sumArr} was passed in as an array of numbers, and ${allSum} is their sum.`;
     return [allSum, string];
 }
@@ -104,7 +101,9 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+    let allProduct = multiply(multiply(multArr[0],multArr[1])[0],multArr[2])[0];
+    let string = `The numbers ${multArr} have a product of 24.`;
+    return [allProduct, string];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
