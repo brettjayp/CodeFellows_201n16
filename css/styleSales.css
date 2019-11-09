@@ -1,0 +1,8 @@
+#listsContainer {
+    color: blue;
+    display: inline-block;
+}
+
+#listsContainer > ul {
+    float: left;
+}
