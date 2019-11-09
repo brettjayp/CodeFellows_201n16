@@ -30,6 +30,7 @@ let shopFirstAndPike = {
             this.ttlCookiesForDay = this.ttlCookiesForDay + this.cookiesPerHour[i];
             addEl('li', `${hours[i]}, Cookies: ${this.cookiesPerHour[i]}`, this.parent);
         }
+        addEl('li', `Total Sales: ${this.ttlCookiesForDay}`, this.parent);
     }
 };
 let shopTokyo = {
@@ -50,6 +51,7 @@ let shopTokyo = {
             this.ttlCookiesForDay = this.ttlCookiesForDay + this.cookiesPerHour[i];
             addEl('li', `${hours[i]}, Cookies: ${this.cookiesPerHour[i]}`, this.parent);
         }
+        addEl('li', `Total Sales: ${this.ttlCookiesForDay}`, this.parent);
     }
 };
 let shopDubai = {
@@ -70,6 +72,7 @@ let shopDubai = {
             this.ttlCookiesForDay = this.ttlCookiesForDay + this.cookiesPerHour[i];
             addEl('li', `${hours[i]}, Cookies: ${this.cookiesPerHour[i]}`, this.parent);
         }
+        addEl('li', `Total Sales: ${this.ttlCookiesForDay}`, this.parent);
     }
 };
 let shopParis = {
@@ -90,6 +93,7 @@ let shopParis = {
             this.ttlCookiesForDay = this.ttlCookiesForDay + this.cookiesPerHour[i];
             addEl('li', `${hours[i]}, Cookies: ${this.cookiesPerHour[i]}`, this.parent);
         }
+        addEl('li', `Total Sales: ${this.ttlCookiesForDay}`, this.parent);
     }
 };
 let shopLima = {
@@ -110,6 +114,7 @@ let shopLima = {
             this.ttlCookiesForDay = this.ttlCookiesForDay + this.cookiesPerHour[i];
             addEl('li', `${hours[i]}, Cookies: ${this.cookiesPerHour[i]}`, this.parent);
         }
+        addEl('li', `Total Sales: ${this.ttlCookiesForDay}`, this.parent);
     }
 };
 
