@@ -31,7 +31,7 @@ let shopFirstAndPike = {
             addEl('li', `${hours[i]}, Cookies: ${this.cookiesPerHour[i]}`, this.parent);
         }
     }
-}
+};
 let shopTokyo = {
     parent: elTokyo,
     title: 'Location: Tokyo',
@@ -51,7 +51,7 @@ let shopTokyo = {
             addEl('li', `${hours[i]}, Cookies: ${this.cookiesPerHour[i]}`, this.parent);
         }
     }
-}
+};
 let shopDubai = {
     parent: elDubai,
     title: 'Location: Dubai',
@@ -71,7 +71,7 @@ let shopDubai = {
             addEl('li', `${hours[i]}, Cookies: ${this.cookiesPerHour[i]}`, this.parent);
         }
     }
-}
+};
 let shopParis = {
     parent: elParis,
     title: 'Location: Paris',
@@ -91,7 +91,7 @@ let shopParis = {
             addEl('li', `${hours[i]}, Cookies: ${this.cookiesPerHour[i]}`, this.parent);
         }
     }
-}
+};
 let shopLima = {
     parent: elLima,
     title: 'Location: Lima',
@@ -111,7 +111,7 @@ let shopLima = {
             addEl('li', `${hours[i]}, Cookies: ${this.cookiesPerHour[i]}`, this.parent);
         }
     }
-}
+};
 
 // function, render name of store to lh, render hours of operation to li, under shopFirstAndPike
 function renderShop(location){
