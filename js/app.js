@@ -34,6 +34,7 @@ Shop.prototype.doCalculations = function(){
     }
 };
 Shop.prototype.renderList = function(){
+    addEl('lh', this.name, this.parent);
     for (let i = 0; i < hours.length; ++i) {
         addEl('li', `${hours[i]}, Cookies: ${this.cookiesPerHour[i]}`, this.parent);
     }
@@ -44,32 +45,11 @@ new Shop ('Seattle', elFirstAndPike, 23, 65, 6.3);
 new Shop ('Tokyo', elTokyo, 3, 24, 1.2);
 new Shop ('Dubai', elDubai, 11, 38, 3.7);
 new Shop ('Paris', elParis, 20, 38, 2.3);
+new Shop ('Lima', elLima, 2, 16, 4.6);
 
 for (let i = 0; i < allShops.length; ++i){
     allShops[i].doCalculations();
     allShops[i].renderList();
-}
-
-let shopParis = {
-    parent: elParis,
-    title: 'Location: Paris',
-    minCustPerHour: 20,
-    maxCustPerHour: 38,
-    avgCookiesPerCustomer: 2.3,
-    customersPerHour: [],
-    cookiesPerHour: [],
-    ttlCookiesForDay: 0,
-
-    render: function() {
-        addEl('lh', this.title, this.parent);
-        for(let i = 0; i < hours.length; ++i) {
-            this.customersPerHour.push(randomMinMax(this.minCustPerHour, this.maxCustPerHour));
-            this.cookiesPerHour.push(Math.floor(this.customersPerHour[i] * this.avgCookiesPerCustomer));
-            this.ttlCookiesForDay = this.ttlCookiesForDay + this.cookiesPerHour[i];
-            addEl('li', `${hours[i]}, Cookies: ${this.cookiesPerHour[i]}`, this.parent);
-        }
-        addEl('li', `Total Sales: ${this.ttlCookiesForDay}`, this.parent);
-    }
 };
 
 
@@ -95,27 +75,6 @@ let shopParis = {
 //         addEl('li', `Total Sales: ${this.ttlCookiesPerDay}`, this.parent);
 //     }
 // };
-let shopLima = {
-    parent: elLima,
-    title: 'Location: Lima',
-    minCustPerHour: 2,
-    maxCustPerHour: 16,
-    avgCookiesPerCustomer: 4.6,
-    customersPerHour: [],
-    cookiesPerHour: [],
-    ttlCookiesForDay: 0,
-
-    render: function() {
-        addEl('lh', this.title, this.parent);
-        for(let i = 0; i < hours.length; ++i) {
-            this.customersPerHour.push(randomMinMax(this.minCustPerHour, this.maxCustPerHour));
-            this.cookiesPerHour.push(Math.floor(this.customersPerHour[i] * this.avgCookiesPerCustomer));
-            this.ttlCookiesForDay = this.ttlCookiesForDay + this.cookiesPerHour[i];
-            addEl('li', `${hours[i]}, Cookies: ${this.cookiesPerHour[i]}`, this.parent);
-        }
-        addEl('li', `Total Sales: ${this.ttlCookiesForDay}`, this.parent);
-    }
-};
 
 // function, render name of store to lh, render hours of operation to li, under shopFirstAndPike
 function renderShop(location){
