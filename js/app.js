@@ -40,6 +40,7 @@ Shop.prototype.renderList = function(){
     for (let i = 0; i < hours.length; ++i){
         addEl('td', this.cookiesPerHour[i], row);
     }
+    addEl('td',this.ttlCookiesPerDay, row);
     // addEl('lh', this.shopName, this.parent);
     // for (let i = 0; i < hours.length; ++i) {
     //     addEl('li', `${hours[i]}, Cookies: ${this.cookiesPerHour[i]}`, this.parent);
@@ -59,6 +60,7 @@ function renderTable(){
     for (let i = 0; i < hours.length; ++i){
         addEl('th', hours[i], rowHours);
     }
+    addEl('th', 'Total', rowHours);
     for (let i = 0; i < allShops.length; ++i){
         allShops[i].doCalculations();
         allShops[i].renderList();

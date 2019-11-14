@@ -23,3 +23,5 @@ been bad about updating the readme!
 - shops now populate as part of each shop's constructor method
 - row of all hours now populates as part of function to render whole table
 - all shop:hour sales data now populates as table data, still need to add shop daily totals
+- added totals column
+- all table data populates as would be expected, table backend complete
