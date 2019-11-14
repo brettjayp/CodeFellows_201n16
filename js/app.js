@@ -21,7 +21,7 @@ function Shop (name, parent, min, max, avg) {
     this.avgCookiesPerCustomer = avg;
     this.customersPerHour = [];
     this.cookiesPerHour = [];
-    this.ttlCookiesPerDay = [];
+    this.ttlCookiesPerDay = 0;
 
     allShops.push(this);
 }
@@ -34,7 +34,7 @@ Shop.prototype.doCalculations = function(){
     }
 };
 Shop.prototype.renderList = function(){
-    addEl('lh', this.name, this.parent);
+    addEl('lh', this.shopName, this.parent);
     for (let i = 0; i < hours.length; ++i) {
         addEl('li', `${hours[i]}, Cookies: ${this.cookiesPerHour[i]}`, this.parent);
     }
@@ -47,42 +47,13 @@ new Shop ('Dubai', elDubai, 11, 38, 3.7);
 new Shop ('Paris', elParis, 20, 38, 2.3);
 new Shop ('Lima', elLima, 2, 16, 4.6);
 
-for (let i = 0; i < allShops.length; ++i){
-    allShops[i].doCalculations();
-    allShops[i].renderList();
-};
-
-
-// shop object literals
-// let shopFirstAndPike = {
-//     parent: elFirstAndPike,
-//     title: 'Location: Seattle',
-//     minCustPerHour: 23,
-//     maxCustPerHour: 65,
-//     avgCookiesPerCustomer: 6.3,
-//     customersPerHour: [],
-//     cookiesPerHour: [],
-//     ttlCookiesForDay: 0,
-    
-//     render: function() {
-//         addEl('lh', this.title, this.parent);
-//         for(let i = 0; i < hours.length; ++i) {
-//             this.customersPerHour.push(randomMinMax(this.minCustPerHour, this.maxCustPerHour));
-//             this.cookiesPerHour.push(Math.floor(this.customersPerHour[i] * this.avgCookiesPerCustomer));
-//             this.ttlCookiesForDay = this.ttlCookiesForDay + this.cookiesPerHour[i];
-//             addEl('li', `${hours[i]}, Cookies: ${this.cookiesPerHour[i]}`, this.parent);
-//         }
-//         addEl('li', `Total Sales: ${this.ttlCookiesPerDay}`, this.parent);
-//     }
-// };
-
-// function, render name of store to lh, render hours of operation to li, under shopFirstAndPike
-function renderShop(location){
-    addEl('lh', 'Shop: First and Pike', location);
-    for (let i = 0; i < hours.length; ++i) {
-        addEl('li', hours[i], location);
+function renderShops() {
+    for (let i = 0; i < allShops.length; ++i){
+        allShops[i].doCalculations();
+        allShops[i].renderList();
     }
 }
+renderShops();
 
 // helper function, add a new element
 function addEl(element, content, parent){
@@ -98,12 +69,5 @@ function addEl(element, content, parent){
 function randomMinMax(min, max){
     return Math.floor((Math.random() * (max - min)) + min);
 }
-
-// FUNCTION CALLS!
-shopFirstAndPike.render();
-shopTokyo.render();
-shopDubai.render();
-shopParis.render();
-shopLima.render();
 
 // end of line, do not proceed
