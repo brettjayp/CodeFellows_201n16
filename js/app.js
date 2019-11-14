@@ -37,6 +37,9 @@ Shop.prototype.doCalculations = function(){
 Shop.prototype.renderList = function(){
     let row = addEl('tr', false, elTable);
     addEl('th', this.shopName, row);
+    for (let i = 0; i < hours.length; ++i){
+        addEl('td', this.cookiesPerHour[i], row);
+    }
     // addEl('lh', this.shopName, this.parent);
     // for (let i = 0; i < hours.length; ++i) {
     //     addEl('li', `${hours[i]}, Cookies: ${this.cookiesPerHour[i]}`, this.parent);
