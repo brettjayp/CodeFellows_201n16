@@ -18,3 +18,7 @@ been bad about updating the readme!
 - updating variable name where used fixes issue, shop names are now back as list headers
 - refactoring constructor now complete, but I still need to rewrite it to produce a table instead of lists
 - weeded out the old code
+- commented out the lists
+- begun constructing table in js
+- shops now populate as part of each shop's constructor method
+- row of all hours now populates as part of function to render whole table
