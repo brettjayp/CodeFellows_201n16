@@ -1,6 +1,4 @@
-/* eslint-disable indent */
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable no-unused-vars */
+/* eslint-disable indent */ /* eslint-disable no-trailing-spaces */ /* eslint-disable no-unused-vars */
 'use strict';
 
 // constants, elements from HTML
@@ -13,7 +11,7 @@ const elLima = document.getElementById('shopLima');
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 let allShops = [];
 
-// shop constructor
+// shop constructor and prototypes/methods
 function Shop (name, parent, min, max, avg){
     this.shopName = name;
     this.parent = parent;
@@ -26,7 +24,6 @@ function Shop (name, parent, min, max, avg){
 
     allShops.push(this);
 }
-
 Shop.prototype.doCalculations = function(){
     for (let i = 0; i < hours.length; ++i){
         this.customersPerHour.push(randomMinMax(this.minCustPerHour, this.maxCustPerHour));
@@ -41,11 +38,6 @@ Shop.prototype.renderList = function(){
         addEl('td', this.cookiesPerHour[i], row);
     }
     addEl('td',this.ttlCookiesPerDay, row);
-    // addEl('lh', this.shopName, this.parent);
-    // for (let i = 0; i < hours.length; ++i) {
-    //     addEl('li', `${hours[i]}, Cookies: ${this.cookiesPerHour[i]}`, this.parent);
-    // }
-    // addEl('li', `Total Sales: ${this.ttlCookiesPerDay}`, this.parent);
 };
 
 new Shop ('Seattle', elFirstAndPike, 23, 65, 6.3);
@@ -54,6 +46,7 @@ new Shop ('Dubai', elDubai, 11, 38, 3.7);
 new Shop ('Paris', elParis, 20, 38, 2.3);
 new Shop ('Lima', elLima, 2, 16, 4.6);
 
+// main function, render feature to page
 function renderTable(){
     let rowHours = addEl('thead', false, elTable);
     addEl('th', false, rowHours);
