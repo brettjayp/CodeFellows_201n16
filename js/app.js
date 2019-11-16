@@ -4,6 +4,7 @@
 const elCookieTable = document.getElementById('cookieTable');
 const elEmployeeTable = document.getElementById('employeeTable');
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+const adjustments = [0.5, 0.75, 1.0, 0.6, 0.8, 1.0, 0.7, 0.4, 0.6, 0.9, 0.7, 0.5, 0.3, 0.4, 0.6];
 let allShops = [];
 // shop constructor and prototypes/methods
 function Shop (name, min, max, avg){
@@ -21,7 +22,7 @@ function Shop (name, min, max, avg){
 // calculate and store customersPerHour, cookiesPerHour, and ttlCookiesPerDay
 Shop.prototype.doCalculations = function(){
     for (let i = 0; i < hours.length; ++i){
-        this.customersPerHour.push(randomMinMax(this.minCustPerHour, this.maxCustPerHour));
+        this.customersPerHour.push((randomMinMax(this.minCustPerHour, this.maxCustPerHour)) * adjustments[i]);
         this.cookiesPerHour.push(Math.floor(this.customersPerHour[i] * this.avgCookiesPerCustomer));
         this.ttlCookiesPerDay = this.ttlCookiesPerDay + this.cookiesPerHour[i];
     }
