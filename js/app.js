@@ -1,54 +1,67 @@
-/* eslint-disable indent */ /* eslint-disable no-trailing-spaces */ /* eslint-disable no-unused-vars */
+/* eslint-disable indent */ /* eslint-disable no-trailing-spaces */ /* eslint-disable no-unused-vars */ /* eslint-disable no-multi-spaces */
 'use strict';
-
 // constants, elements from HTML
-const elTable = document.getElementById('tableData');
-const elFirstAndPike = document.getElementById('shopFirstAndPike');
-const elTokyo = document.getElementById('shopTokyo');
-const elDubai = document.getElementById('shopDubai');
-const elParis = document.getElementById('shopParis');
-const elLima = document.getElementById('shopLima');
+const elCookieTable = document.getElementById('cookieTable');
+const elEmployeeTable = document.getElementById('employeeTable');
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+const adjustments = [0.5, 0.75, 1.0, 0.6, 0.8, 1.0, 0.7, 0.4, 0.6, 0.9, 0.7, 0.5, 0.3, 0.4, 0.6];
 let allShops = [];
-
 // shop constructor and prototypes/methods
-function Shop (name, parent, min, max, avg){
+function Shop (name, min, max, avg){
     this.shopName = name;
-    this.parent = parent;
     this.minCustPerHour = min;
     this.maxCustPerHour = max;
     this.avgCookiesPerCustomer = avg;
     this.customersPerHour = [];
     this.cookiesPerHour = [];
     this.ttlCookiesPerDay = 0;
-
+    this.tossersPerHour = [];
+    this.ttlTosserHrs = 0;
     allShops.push(this);
 }
+// calculate and store customersPerHour, cookiesPerHour, and ttlCookiesPerDay
 Shop.prototype.doCalculations = function(){
     for (let i = 0; i < hours.length; ++i){
-        this.customersPerHour.push(randomMinMax(this.minCustPerHour, this.maxCustPerHour));
+        this.customersPerHour.push((randomMinMax(this.minCustPerHour, this.maxCustPerHour)) * adjustments[i]);
         this.cookiesPerHour.push(Math.floor(this.customersPerHour[i] * this.avgCookiesPerCustomer));
         this.ttlCookiesPerDay = this.ttlCookiesPerDay + this.cookiesPerHour[i];
     }
 };
-Shop.prototype.renderList = function(){
-    let row = addEl('tr', false, elTable);
+// renders data to the cookies table (shop name, cookies per hour, cookies per day)
+Shop.prototype.renderCookies = function(){
+    let row = addEl('tr', false, elCookieTable);
     addEl('th', this.shopName, row);
     for (let i = 0; i < hours.length; ++i){
         addEl('td', this.cookiesPerHour[i], row);
     }
     addEl('td',this.ttlCookiesPerDay, row);
 };
-
-new Shop ('Seattle', elFirstAndPike, 23, 65, 6.3);
-new Shop ('Tokyo', elTokyo, 3, 24, 1.2);
-new Shop ('Dubai', elDubai, 11, 38, 3.7);
-new Shop ('Paris', elParis, 20, 38, 2.3);
-new Shop ('Lima', elLima, 2, 16, 4.6);
-
-// main function, render feature to page
-function renderTable(){
-    let rowHours = addEl('thead', false, elTable);
+// calculates and stores how many tossers are needed per hour, with a minimum of two tossers
+Shop.prototype.makeTossers = function(){
+    for(let i = 0; i < this.cookiesPerHour.length; ++i){
+        this.tossersPerHour.push(Math.ceil(this.cookiesPerHour[i] / 20));
+        while(this.tossersPerHour[i] < 2){this.tossersPerHour[i]++;}
+        this.ttlTosserHrs += this.tossersPerHour[i];
+    }
+};
+// renders data to the tossers table (shop name, tossers per hour)
+Shop.prototype.renderTossers = function(){
+    let row = addEl('tr', false, elEmployeeTable);
+    addEl('th', this.shopName, row);
+    for(let i = 0; i < hours.length; ++i){
+        addEl('td', this.tossersPerHour[i], row);
+    }
+    addEl('td', this.ttlTosserHrs, row);
+};
+// creating persistent shops
+new Shop ('Seattle', 23, 65, 6.3);
+new Shop ('Tokyo', 3, 24, 1.2);
+new Shop ('Dubai', 11, 38, 3.7);
+new Shop ('Paris', 20, 38, 2.3);
+new Shop ('Lima', 2, 16, 4.6);
+// do all of cookie table, and render to the page
+function renderCookieTable(){
+    let rowHours = addEl('thead', false, elCookieTable);
     addEl('th', false, rowHours);
     for (let i = 0; i < hours.length; ++i){
         addEl('th', hours[i], rowHours);
@@ -56,11 +69,53 @@ function renderTable(){
     addEl('th', 'Total', rowHours);
     for (let i = 0; i < allShops.length; ++i){
         allShops[i].doCalculations();
-        allShops[i].renderList();
+        allShops[i].renderCookies();
     }
+    let rowTotals = addEl('thead', false, elCookieTable);
+    addEl('th', 'Total', rowTotals);
+    for (let i = 0; i < hours.length; ++i){
+        let ttlCookiesPerHour = 0;
+        for (let j = 0; j < allShops.length; ++j){
+            ttlCookiesPerHour += allShops[j].cookiesPerHour[i];
+        }
+        addEl('td', ttlCookiesPerHour, rowTotals);
+    }
+    let totalAll = 0;
+    for (let i = 0; i < allShops.length ; ++i){
+        totalAll += allShops[i].ttlCookiesPerDay;
+    }
+    addEl('th', totalAll, rowTotals);
 }
-renderTable();
-
+// do all of employee table, and render to the page
+function renderEmployeeTable(){
+    let rowHours = addEl('thead', false, elEmployeeTable);
+    addEl('th', false, rowHours);
+    for (let i = 0; i < hours.length; ++i){
+        addEl('th', hours[i], rowHours);
+    }
+    addEl('th', 'Total', rowHours);
+    for(let i = 0; i < allShops.length; ++i){
+        allShops[i].makeTossers();
+        allShops[i].renderTossers();
+    }
+    let rowTotals = addEl('thead', false, elEmployeeTable);
+    addEl('th', 'Total', rowTotals);
+    for(let i = 0; i < hours.length; ++i){
+        let ttlTossersPerHour = 0;
+        for (let j = 0; j < allShops.length; ++j){
+            ttlTossersPerHour += allShops[j].tossersPerHour[i];
+        }
+        addEl('td', ttlTossersPerHour, rowTotals);
+    }
+    let totalAll = 0;
+    for (let i = 0; i < allShops.length; ++i){
+        totalAll += allShops[i].ttlTosserHrs;
+    }
+    addEl('th', totalAll, rowTotals);
+}
+// call major functions
+renderCookieTable();
+renderEmployeeTable();
 // helper function, add a new element
 function addEl(element, content, parent){
     var newElement = document.createElement(element);
@@ -75,5 +130,14 @@ function addEl(element, content, parent){
 function randomMinMax(min, max){
     return Math.floor((Math.random() * (max - min)) + min);
 }
-
+//    //
+//FORM//
+//    //
+// let userForm = document.getElementById('user-form');
+// userForm.addEventListener('submit', handleSubmit);
+// function handleSubmit(event){
+//     event.preventDefault();
+//     var name = event.target.inputElementName.value;
+//     console.log('Name:', event.target.inputElementName.value);
+// }
 // end of line, do not proceed
