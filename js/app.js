@@ -3,6 +3,7 @@
 // constants, elements from HTML
 const elCookieTable = document.getElementById('cookieTable');
 const elEmployeeTable = document.getElementById('employeeTable');
+const elFormNew = document.getElementById('formNew');
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 const adjustments = [0.5, 0.75, 1.0, 0.6, 0.8, 1.0, 0.7, 0.4, 0.6, 0.9, 0.7, 0.5, 0.3, 0.4, 0.6];
 let allShops = [];
@@ -21,10 +22,17 @@ function Shop (name, min, max, avg){
 }
 // calculate and store customersPerHour, cookiesPerHour, and ttlCookiesPerDay
 Shop.prototype.doCalculations = function(){
-    for (let i = 0; i < hours.length; ++i){
-        this.customersPerHour.push((randomMinMax(this.minCustPerHour, this.maxCustPerHour)) * adjustments[i]);
-        this.cookiesPerHour.push(Math.floor(this.customersPerHour[i] * this.avgCookiesPerCustomer));
-        this.ttlCookiesPerDay = this.ttlCookiesPerDay + this.cookiesPerHour[i];
+    while (this.cookiesPerHour.length < hours.length){
+        for (let i = 0; i < hours.length; ++i){
+            this.customersPerHour.push((randomMinMax(this.minCustPerHour, this.maxCustPerHour)) * adjustments[i]);
+            this.cookiesPerHour.push(Math.floor(this.customersPerHour[i] * this.avgCookiesPerCustomer));
+            // I have NO IDEA why, but I occasionally get 0's returned after my Math logic. So to force a value, even it it's below the theoretical minimum, I'm forcing the code to keep running the above two lines, replacing the previous values of course, until I get a value > 0. I use a while loop to accomplish this.
+            while (this.cookiesPerHour[i] === 0){
+                this.customersPerHour[i] = (randomMinMax(this.minCustPerHour, this.maxCustPerHour)) * adjustments[i];
+                this.cookiesPerHour [i] = Math.floor(this.customersPerHour[i] * this.avgCookiesPerCustomer);
+            }
+            this.ttlCookiesPerDay = this.ttlCookiesPerDay + this.cookiesPerHour[i];
+        }
     }
 };
 // renders data to the cookies table (shop name, cookies per hour, cookies per day)
@@ -32,7 +40,7 @@ Shop.prototype.renderCookies = function(){
     let row = addEl('tr', false, elCookieTable);
     addEl('th', this.shopName, row);
     for (let i = 0; i < hours.length; ++i){
-        addEl('td', this.cookiesPerHour[i], row);
+        forceEl('td', this.cookiesPerHour[i], row);
     }
     addEl('td',this.ttlCookiesPerDay, row);
 };
@@ -113,7 +121,26 @@ function renderEmployeeTable(){
     }
     addEl('th', totalAll, rowTotals);
 }
-// call major functions
+// input form for creating NEW locations
+// creates a NEW location from form input
+function createNew(event){
+    event.preventDefault();
+    document.getElementsByTagName('table')[0].innerHTML = '';
+    document.getElementsByTagName('table')[1].innerHTML = '';
+    let name = event.target.name.value;
+    let min = event.target.min.value;
+    let max = event.target.max.value;
+    let avg = event.target.avg.value;
+    new Shop(name,min,max,avg);
+    renderCookieTable();
+    renderEmployeeTable();
+    // checkForZero();
+}
+elFormNew.addEventListener('submit', createNew);
+// renders a NEW location (based on form input) to the page
+// function renderNew(){
+// }
+// all major functions called
 renderCookieTable();
 renderEmployeeTable();
 // helper function, add a new element
@@ -126,18 +153,15 @@ function addEl(element, content, parent){
     parent.appendChild(newElement);
     return newElement;
 } 
+function forceEl(element, content, parent){
+    var newElement = document.createElement(element);
+    var newContent = document.createTextNode(content);
+    newElement.appendChild(newContent);
+    parent.appendChild(newElement);
+    return newElement;
+}
 // helper function, return random whole number based on min and max parameters
 function randomMinMax(min, max){
     return Math.floor((Math.random() * (max - min)) + min);
 }
-//    //
-//FORM//
-//    //
-// let userForm = document.getElementById('user-form');
-// userForm.addEventListener('submit', handleSubmit);
-// function handleSubmit(event){
-//     event.preventDefault();
-//     var name = event.target.inputElementName.value;
-//     console.log('Name:', event.target.inputElementName.value);
-// }
 // end of line, do not proceed

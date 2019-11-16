@@ -7,14 +7,26 @@
         <link rel="stylesheet" type="text/css" href="css/styleSales.css">
     </head>
     <body>
-        <!-- <hr>
-        <form id="user-form">
-            <fieldset>
-                <label>Enter thing here:</label>
-                <input id="inputElementName" type="text" placeholder="Enter thing...">
-                <button value="submit">Submit</button>
+        <hr>
+        <h1>Add a new store to the sales report.</h1>
+        <form  id="formNew">
+            <fieldset class="salesForm">
+                
+                <label for="name">Name of the Store</label>
+                <input type="text" name="name" required><br />
+
+                <label for="min">Minimum Customers Per Hour</label>
+                <input type="text" name="min" required><br />
+
+                <label for="max">Maximum Customers Per Hour</label>
+                <input type="text" name="max" required><br />
+
+                <label for="avg">Average Cookies Sold per Sale</label>
+                <input type="text" name="avg" required><br />
+
+                <button>Submit</button>
             </fieldset>
-        </form> -->
+        </form>
         <hr>
         <h2>Cookies per hour, by store</h2>
         <table id="cookieTable"></table>
