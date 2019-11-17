@@ -135,6 +135,7 @@ function createNew(event){
     new Shop(name,min,max,avg);
     renderCookieTable();
     renderEmployeeTable();
+    // elFormNew.reset();
 }
 elFormNew.addEventListener('submit', createNew);
 
