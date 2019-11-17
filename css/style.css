@@ -2,3 +2,9 @@
     width: 65%;
     height: auto;
 }
+input:valid{
+    border: 2px solid black;
+}
+input:invalid{
+    border: 2px dotted red;
+}
