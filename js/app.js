@@ -24,7 +24,7 @@ function Shop (name, min, max, avg){
 Shop.prototype.doCalculations = function(){
     while (this.cookiesPerHour.length < hours.length){
         for (let i = 0; i < hours.length; ++i){
-            this.customersPerHour.push((randomMinMax(this.minCustPerHour, this.maxCustPerHour)) * adjustments[i]);
+            this.customersPerHour.push((randomMinMax(this.minCustPerHour, this.maxCustPerHour)));// * adjustments[i]);
             this.cookiesPerHour.push(Math.floor(this.customersPerHour[i] * this.avgCookiesPerCustomer));
             // I have NO IDEA why, but I occasionally get 0's returned after my Math logic. So to force a value, even it it's below the theoretical minimum, I'm forcing the code to keep running the above two lines, replacing the previous values of course, until I get a value > 0. I use a while loop to accomplish this.
             while (this.cookiesPerHour[i] === 0){
@@ -40,16 +40,18 @@ Shop.prototype.renderCookies = function(){
     let row = addEl('tr', false, elCookieTable);
     addEl('th', this.shopName, row);
     for (let i = 0; i < hours.length; ++i){
-        forceEl('td', this.cookiesPerHour[i], row);
+        addEl('td', this.cookiesPerHour[i], row);
     }
     addEl('td',this.ttlCookiesPerDay, row);
 };
 // calculates and stores how many tossers are needed per hour, with a minimum of two tossers
 Shop.prototype.makeTossers = function(){
-    for(let i = 0; i < this.cookiesPerHour.length; ++i){
-        this.tossersPerHour.push(Math.ceil(this.cookiesPerHour[i] / 20));
-        while(this.tossersPerHour[i] < 2){this.tossersPerHour[i]++;}
-        this.ttlTosserHrs += this.tossersPerHour[i];
+    while (this.tossersPerHour.length < hours.length){
+        for(let i = 0; i < this.cookiesPerHour.length; ++i){
+            this.tossersPerHour.push(Math.ceil(this.cookiesPerHour[i] / 20));
+            while(this.tossersPerHour[i] < 2){this.tossersPerHour[i]++;}
+            this.ttlTosserHrs += this.tossersPerHour[i];
+        }
     }
 };
 // renders data to the tossers table (shop name, tossers per hour)
@@ -121,7 +123,6 @@ function renderEmployeeTable(){
     }
     addEl('th', totalAll, rowTotals);
 }
-// input form for creating NEW locations
 // creates a NEW location from form input
 function createNew(event){
     event.preventDefault();
@@ -134,12 +135,9 @@ function createNew(event){
     new Shop(name,min,max,avg);
     renderCookieTable();
     renderEmployeeTable();
-    // checkForZero();
 }
 elFormNew.addEventListener('submit', createNew);
-// renders a NEW location (based on form input) to the page
-// function renderNew(){
-// }
+
 // all major functions called
 renderCookieTable();
 renderEmployeeTable();
@@ -153,13 +151,6 @@ function addEl(element, content, parent){
     parent.appendChild(newElement);
     return newElement;
 } 
-function forceEl(element, content, parent){
-    var newElement = document.createElement(element);
-    var newContent = document.createTextNode(content);
-    newElement.appendChild(newContent);
-    parent.appendChild(newElement);
-    return newElement;
-}
 // helper function, return random whole number based on min and max parameters
 function randomMinMax(min, max){
     return Math.floor((Math.random() * (max - min)) + min);
