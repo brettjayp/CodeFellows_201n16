@@ -144,10 +144,11 @@ renderCookieTable();
 renderEmployeeTable();
 // helper function, add a new element
 function addEl(element, content, parent){
-    var newElement = document.createElement(element);
+    let newElement = document.createElement(element);
     if(content){
-        var newContent = document.createTextNode(content);
+        let newContent = document.createTextNode(content);
         newElement.appendChild(newContent);
+        // newElement.textContent = content;
     }
     parent.appendChild(newElement);
     return newElement;
