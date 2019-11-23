@@ -1,0 +1,67 @@
+body {
+    text-align: center;
+}
+#navBar {
+    width: 960px;
+    height: 100px;
+    margin: auto;
+    background-color: #00000020;
+}
+.pageBreak{
+    margin: 20px auto auto auto;
+    width: 960px;
+    height: 12px;
+    background-repeat: repeat-x;
+    background: url(lab-assets/hr-img.png);
+}
+#titleBar {
+    width: 960px;
+    height: 140px;
+    margin: 20px auto auto auto;
+    background-color: #00000020;
+}
+#heroImage {
+    width: 960px;
+    height: auto;
+    margin: 20px auto auto auto;
+}
+#text {
+    text-align: left;
+    text-indent: 40px;
+    width: 960px;
+    height: auto;
+    margin: 20px auto auto auto;
+}
+#checklist {
+    width: 960px;
+    height: 240px;
+    margin: 20px auto auto auto;
+    background-color: #00000020;
+}
+#bio {
+    width: 960px;
+    height: 120px;
+    margin: 20px auto auto auto;
+    background-color: #00000020;
+}
+#logoOnHR {
+    /* margin-left: auto;
+    margin-right: auto; */
+    border: 5px solid white;
+    z-index: 1;
+}
+#hrBreak {
+    /* display: inline-block; */
+    width: 960px;
+    position: relative;
+    bottom: -30px;
+    z-index: -1;
+    /* color: gray; */
+}
+#footerBar {
+    text-align: center;
+    width: 300px;
+    height: 60px;
+    margin: 20px auto auto auto;
+    background-color: #00000020;
+}
