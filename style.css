@@ -2,11 +2,22 @@ body {
     text-align: center;
 }
 #navBar {
+    /* display: inline; */
     width: 960px;
-    height: 100px;
+    height: 45px;
     margin: auto;
     background-color: #00000020;
 }
+.iconRight{ 
+    float: right;
+    margin: 10px 0px 11px 2px;
+}
+.iconLeft{
+    float: left;
+    margin-right: 5px;
+}
+
+
 .pageBreak{
     margin: 20px auto auto auto;
     width: 960px;
@@ -16,10 +27,18 @@ body {
 }
 #titleBar {
     width: 960px;
-    height: 140px;
-    margin: 20px auto auto auto;
+    height: 60px;
+    margin: 40px auto auto auto;
     background-color: #00000020;
 }
+#title{
+    float: left;
+
+}
+#print{
+    float: right;
+}
+
 #heroImage {
     width: 960px;
     height: auto;
@@ -34,9 +53,11 @@ body {
 }
 #checklist {
     width: 960px;
-    height: 240px;
+    height: 300px;
     margin: 20px auto auto auto;
-    background-color: #00000020;
+    background: url(lab-assets/list-bg.png);
+    background-size: 960px 300px;
+    /* background-repeat: repeat-y; */
 }
 #bio {
     width: 960px;
