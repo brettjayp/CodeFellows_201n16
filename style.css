@@ -1,12 +1,37 @@
 body {
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #00000060;
 }
+p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #000000BB;
+}
+
 #navBar {
+    /* display: inline; */
     width: 960px;
-    height: 100px;
+    height: 45px;
     margin: auto;
-    background-color: #00000020;
+    
 }
+.iconRight{ 
+    float: right;
+    margin: 10px 0px 11px 2px;
+}
+#iconGap{
+    float: right;
+    margin: 10px 8px 11px 2px;
+}
+.iconLeft{
+    float: left;
+    margin-right: 5px;
+}
+#delicious{
+    font-size: 20px;
+    
+}
+
 .pageBreak{
     margin: 20px auto auto auto;
     width: 960px;
@@ -15,11 +40,28 @@ body {
     background: url(lab-assets/hr-img.png);
 }
 #titleBar {
+    text-align: left;
     width: 960px;
-    height: 140px;
-    margin: 20px auto auto auto;
-    background-color: #00000020;
+    font-size: 0.75em;
+    height: 70px;
+    margin: 40px auto auto auto;
+    
 }
+#title{
+    float: left;
+
+}
+#bigTitle{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+    font-weight: bold;
+    font-size: 4em;
+}
+#print{
+    float: right;
+    margin: 58px 0px auto auto;
+}
+
 #heroImage {
     width: 960px;
     height: auto;
@@ -34,16 +76,53 @@ body {
 }
 #checklist {
     width: 960px;
-    height: 240px;
+    height: 300px;
     margin: 20px auto auto auto;
-    background-color: #00000020;
+    background: url(lab-assets/list-bg.png);
+    background-size: 960px 300px;
+    /* background-repeat: repeat-y; */
 }
 #bio {
     width: 960px;
-    height: 120px;
+    height: 100px;
     margin: 20px auto auto auto;
-    background-color: #00000020;
+    /* background-color: #00000020; */
 }
+#picture{
+    float: left;
+    margin: auto 30px auto auto;
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+    
+}
+#textBio{
+    float: left;
+    width: 600px;
+    color: #000000BB;
+
+    /* background-color: #00000020; */
+    text-align: left;
+}
+#vanessa{
+    font-weight: bold;
+    font-size: 1.75em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#about{
+    line-height: 2em;
+    /* font-size: 1.25em; */
+}
+#share{
+    float: right;
+    color: white;
+    background-color: #b4745c;
+    line-height: 40px;
+    width: 200px;
+    height: 40px;
+    margin: 30px 0px;
+}
+
 #logoOnHR {
     /* margin-left: auto;
     margin-right: auto; */
@@ -60,8 +139,9 @@ body {
 }
 #footerBar {
     text-align: center;
-    width: 300px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 960px;
     height: 60px;
     margin: 20px auto auto auto;
-    background-color: #00000020;
+    
 }
