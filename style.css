@@ -82,9 +82,19 @@ p {
     background-size: 960px 300px;
     /* background-repeat: repeat-y; */
 }
+#checkBox {
+    line-height: 30px;
+    font-size: 25px;
+    columns: 2;
+    text-align: left;
+    margin: auto 60px 0px 80px;
+    padding-top: 36px;
+    /* -webkit-columns: 2; */
+    /* -moz-columns: 2; */
+}
 #bio {
     width: 960px;
-    height: 100px;
+    height: 130px;
     margin: 20px auto auto auto;
     /* background-color: #00000020; */
 }
