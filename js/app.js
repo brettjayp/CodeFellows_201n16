@@ -4,6 +4,7 @@
 const elCookieTable = document.getElementById('cookieTable');
 const elEmployeeTable = document.getElementById('employeeTable');
 const elFormNew = document.getElementById('formNew');
+const elButtonSubmit = document.getElementById('buttonSubmit');
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 const adjustments = [0.5, 0.75, 1.0, 0.6, 0.8, 1.0, 0.7, 0.4, 0.6, 0.9, 0.7, 0.5, 0.3, 0.4, 0.6];
 let allShops = [];
@@ -136,6 +137,9 @@ function createNew(event){
     renderCookieTable();
     renderEmployeeTable();
     // elFormNew.reset();
+    if(allShops.length > 10){
+        elFormNew.innerHTML = 'Wow, that\'s a lot of shops!';
+    }
 }
 elFormNew.addEventListener('submit', createNew);
 
@@ -157,4 +161,5 @@ function addEl(element, content, parent){
 function randomMinMax(min, max){
     return Math.floor((Math.random() * (max - min)) + min);
 }
+
 // end of line, do not proceed

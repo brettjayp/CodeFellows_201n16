@@ -1,7 +1,103 @@
-#heroIndex {
-    width: 65%;
-    height: auto;
+#colorPalette {
+    /* This is here just for color reference */
+    /* https://www.canva.com/colors/color-meanings/salmon/ */
+    color: #A83832; /* darkest pink/salmon */
+    color: #C35047; /*  */
+    color: #DE685C; /*  */
+    color: #FA8072; /* salmon */
+    color: #00BDDA; /* lightest blue */
+    color: #00A4C1; /* medium blue */
+    color: #008BA9; /* darkest blue */
 }
+
+body {
+    background-color: #A83832;
+    text-align: center;
+}
+
+#containerMain {
+    display: inline-block;
+    width: 1360px;
+    margin: 40px auto auto auto;
+    background-color: #00000020;
+}
+#containerNavBar {
+    width: 960px;
+    height: 100px;
+    margin: 0px 0px auto 40px;
+    background-color: #00000020;
+    float: left;
+}
+#containerFeed {
+    width: 960px;
+    height: auto;
+    margin: 40px 0px 0px 40px;
+    background-color: #00000020;
+    float: left;
+}
+
+#boxNavLabel {
+    width: auto;
+    height: 80px;
+    margin: 10px 10px 10px 10px;
+    background-color: #00000020;
+    float: left;
+}
+.boxNavIcon {
+    width: 80px;
+    height: 80px;
+    margin: 10px 10px 10px 0px;
+    background-color: #00000020;
+    float: right;
+}
+
+.boxFeed {
+    width: 960px;
+    height: 320px;
+    margin: 0px 0px 40px 0px;
+    background-color: #00000020;
+}
+.boxLeftNarrow, .boxRightNarrow {
+    width: 390px;
+    height: 300px;
+    background-color: #00000020;
+    margin: 10px 0px 10px 10px;
+    float: left;
+}
+.boxLeftWide, .boxRightWide {
+    width: 540px;
+    height: 300px;
+    background-color: #00000020;
+    margin: 10px 0px 10px 10px;
+    float: left;
+}
+/* .boxRightNarrow {
+    width: 390px;
+    height: 300px;
+    background-color: #00000020;
+    margin: 10px 0px 10px 10px;
+    float: left;
+}
+.boxRightWide {
+    width: 540px;
+    height: 300px;
+    background-color: #00000020;
+    margin: 10px 0px 10px 10px;
+    float: left;
+} */
+
+#heroVertical {
+    width: 360px;
+    height: auto;
+    float: left;
+    background-color: #00000020;
+}
+#heroHorizontal {
+    background-color: #00000020;
+}
+
+
+/* Form */
 input:valid{
     border: 2px solid black;
 }
