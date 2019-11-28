@@ -1,0 +1,29 @@
+html {
+    background-color: gray;
+}
+
+.boxContainer {
+    width: auto;
+    display: inline-block;
+    width: 900px;
+    height: 300px;
+    border: 5px solid black;
+}
+
+.box {
+    background-color: darkgray;
+    border: 2px solid white;
+    float: left;
+    width: 296px;
+    height: 296px;
+}
+
+.boxImage {
+    max-height: 296px;
+    max-width: 296px;
+    background-color: gray;
+    height: auto;
+    width: auto;
+}
+
+
