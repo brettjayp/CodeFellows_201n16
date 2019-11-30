@@ -3,12 +3,10 @@
 
 // DOM objects
 const displayEl = document.getElementById('displayContainer');
-const displayZeroEl = document.getElementById('displayZero');
-const displayOneEl = document.getElementById('displayOne');
-const displayTwoEl = document.getElementById('displayTwo');
 let catalog = [];
 let lastThree = [-1, -1, -1];
 let newThree = [-1, -1, -1];
+let rounds = [0, 25]; // [current round, total rounds]
 
 // Here we build out catalog of products
 new Product('bag', 'bag.jpg', 'An R2-D2 suitcase');
@@ -41,17 +39,41 @@ function Product(title, source, alt){
   this.title = title;
   this.alt = alt;
   this.src = `../assets/${source}`;
-
+  
   this.displayCount = 0;
   this.clickCount = 0;
-
+  
   catalog.push(this);
+}
+// EVENTS: We'll add an event listener that is active while our overall click count does not exceed our determined rounds. Upon reaching the limit, we will remove it.
+displayEl.addEventListener('click', onClick);
+// EVENTS: FUNCTION: On a valid click, we'll identify the object, increase its clickCount, increase the round count, and show three new products. If we've arrived at our round limit, we'll remove the event listener after rendering the
+function onClick(event){
+  let clickedId = event.target.id;
+  let position = 0;
+  if(clickedId === 'imageOne'){
+    position = 1;
+  } else if(clickedId === 'imageTwo'){
+    position = 2;
+  }
+  ++catalog[newThree[position]].clickCount;
+  ++rounds[0];
+  if(rounds[0] < rounds[1]){
+    showThree();
+  } else if(rounds[0] >= rounds[1]){
+    displayEl.removeEventListener('click', onClick);
+    console.clear();
+    console.table(catalog);
+    console.log('We\'ve reached the end of the rounds.');
+  }
 }
 // PRIMARY FUNCTION: Show three new products to the page. They will not repeat any of the previous round's images, and there will be no duplicates displayed. We also reset the newThree[] array and overwrite the lastThree[] array for tracking and to assist in avoiding repeats and duplicates.
 // For now, we're also displaying a table in the console of our catalog[] items for visibility in tracking. This will clear and update every time we show new products.
 function showThree(){
   lastThree = [newThree[0], newThree[1], newThree[2]];
   newThree = [-1, -1, -1];
+
+  displayEl.innerHTML = '';
 
   randomProduct(0);
   randomProduct(1);
@@ -84,26 +106,23 @@ function randomProduct(position){
 function renderProduct(source, position){
   let newImg = document.createElement('img');
   if(position === 0){
-    displayZeroEl.innerHTML = '';
     newImg.id = 'imageZero';
     newImg.src = source.src;
     newImg.alt = source.alt;
     newImg.title = source.title;
-    displayZeroEl.appendChild(newImg);
+    displayEl.appendChild(newImg);
   } else if(position === 1){
-    displayOneEl.innerHTML = '';
     newImg.id = 'imageOne';
     newImg.src = source.src;
     newImg.alt = source.alt;
     newImg.title = source.title;
-    displayOneEl.appendChild(newImg);
+    displayEl.appendChild(newImg);
   } else if(position === 2){
-    displayTwoEl.innerHTML = '';
     newImg.id = 'imageTwo';
     newImg.src = source.src;
     newImg.alt = source.alt;
     newImg.title = source.title;
-    displayTwoEl.appendChild(newImg);
+    displayEl.appendChild(newImg);
   } else{
     console.log('Hey dummy, you added the wrong position to an image. You should find it and fix it.');
   }
