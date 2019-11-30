@@ -1,0 +1,29 @@
+html {
+    background-color: #00000020;
+}
+
+#displayContainer {
+  background-color: #00000020;
+  width: 940px;
+  height: 320px;
+}
+#displayZero, #displayOne, #displayTwo {
+  float: left;
+  margin: 10px 0px 10px 10px;
+  background-color: #00000020;
+  width: 300px;
+  height: 300px;
+}
+#imageZero, #imageOne, #imageTwo {
+  float: left;
+  margin: 10px 0px 10px 10px;
+  background-color: #00000020;
+  width: 300px;
+  height: 300px;
+}
+#resultsContainer {
+  background-color: #00000020;
+  width: 940px;
+  height: auto;
+  min-height: 300px;
+}
