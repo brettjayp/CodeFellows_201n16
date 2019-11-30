@@ -19,6 +19,18 @@ new Product('breakfast', 'breakfast.jpg', 'An all-in-one breakfast machine');
 new Product('bubblegum', 'bubblegum.jpg', 'Bubblegum designed to look like meatballs');
 new Product('chair', 'chair.jpg', 'A very uncomfortable tall chair');
 new Product('cthulhu', 'cthulhu.jpg', 'An action figure of Cthulhu');
+new Product('dog-duck', 'dog-duck.jpg', 'na');
+new Product('dragon', 'dragon.jpg', 'na');
+new Product('pen', 'pen.jpg', 'na');
+new Product('pet-sweep', 'pet-sweep.jpg', 'na');
+new Product('scissors', 'scissors.jpg', 'na');
+new Product('shark', 'shark.jpg', 'na');
+new Product('sweep', 'sweep.png', 'na');
+new Product('tauntaun', 'tauntaun.jpg', 'na');
+new Product('unicord', 'unicorn.jpg', 'na');
+new Product('usb', 'usb.gif', 'na');
+new Product('water-can', 'water-can.jpg', 'na');
+new Product('wine-glass', 'wine-glass.jpg', 'na');
 
 // // // CALL OUR FEATURE FUNCTION // // //
 showThree();
