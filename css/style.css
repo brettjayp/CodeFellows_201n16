@@ -21,3 +21,9 @@ html {
   width: 300px;
   height: 300px;
 }
+#resultsContainer {
+  background-color: #00000020;
+  width: 940px;
+  height: auto;
+  min-height: 300px;
+}

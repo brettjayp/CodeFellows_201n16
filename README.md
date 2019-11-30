@@ -23,4 +23,7 @@
 - JS: When new products are rendered to the page, we clear previous objects from the apge, we track the previous three images to prevent repeats, we increment the display count of products being rendered, we track the images as we make them to prevent duplicates being shown, and we update a table in the console displaying our catalog[] data.
 - JS, CSS, HTML: Trimmed up some unneeded code. Removed boxes inside of container, render products to container instead of boxes inside of container.
 - JS: Added event handler and round count. On click, we identify the image clicked, increment its click count, increment the current round count, and render three new products. Upon the last click event, we still record our data, we then remove the event listener, and now we no longer display any new products.
-- 
+- JS: Added a function to construct and render a list of the result upon completion of the main event.
+- JS: Removed outputs to the console.
+
+2019...

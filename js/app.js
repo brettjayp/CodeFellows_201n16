@@ -3,6 +3,7 @@
 
 // DOM objects
 const displayEl = document.getElementById('displayContainer');
+const mainEl = document.getElementById('main');
 let catalog = [];
 let lastThree = [-1, -1, -1];
 let newThree = [-1, -1, -1];
@@ -34,6 +35,14 @@ new Product('wine-glass', 'wine-glass.jpg', 'na');
 showThree();
 // // // CALL OUR FEATURE FUNCTION // // //
 
+// FUNCTION: Render an HTML table with the final data.
+function onComplete(){
+  let resultsContainerEl = addEl('section', false, mainEl);
+  resultsContainerEl.id = 'resultsContainer';
+  addEl('h2', 'Results:', resultsContainerEl);
+  let resultsULEl = addEl('ul', false, resultsContainerEl);
+  catalog.forEach(function(i){addEl('li', `${i.title} had ${i.clickCount} click(s) and was displayed ${i.displayCount} time(s).`, resultsULEl);});
+}
 // PIMARY CONSTRUCTOR FUNCTION: This is our constructor function to build new products for the main feature. They each will be pushed to the catalog[] array.
 function Product(title, source, alt){
   this.title = title;
@@ -62,13 +71,10 @@ function onClick(event){
     showThree();
   } else if(rounds[0] >= rounds[1]){
     displayEl.removeEventListener('click', onClick);
-    console.clear();
-    console.table(catalog);
-    console.log('We\'ve reached the end of the rounds.');
+    onComplete();
   }
 }
 // PRIMARY FUNCTION: Show three new products to the page. They will not repeat any of the previous round's images, and there will be no duplicates displayed. We also reset the newThree[] array and overwrite the lastThree[] array for tracking and to assist in avoiding repeats and duplicates.
-// For now, we're also displaying a table in the console of our catalog[] items for visibility in tracking. This will clear and update every time we show new products.
 function showThree(){
   lastThree = [newThree[0], newThree[1], newThree[2]];
   newThree = [-1, -1, -1];
@@ -78,9 +84,6 @@ function showThree(){
   randomProduct(0);
   randomProduct(1);
   randomProduct(2);
-
-  console.clear();
-  console.table(catalog);
 }
 // PRIMARY FUNCTION: By using renderProduct() and randomMinMax(), select a random product and render it to the page, dependent on position (0, 1, 2). Also set the current newThree[] position to reflect which image is being shown, and increment that image's displayCount value.
 function randomProduct(position){
@@ -123,8 +126,6 @@ function renderProduct(source, position){
     newImg.alt = source.alt;
     newImg.title = source.title;
     displayEl.appendChild(newImg);
-  } else{
-    console.log('Hey dummy, you added the wrong position to an image. You should find it and fix it.');
   }
   return newImg;
 }
