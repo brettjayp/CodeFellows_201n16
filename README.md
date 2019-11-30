@@ -25,5 +25,6 @@
 - JS: Added event handler and round count. On click, we identify the image clicked, increment its click count, increment the current round count, and render three new products. Upon the last click event, we still record our data, we then remove the event listener, and now we no longer display any new products.
 - JS: Added a function to construct and render a list of the result upon completion of the main event.
 - JS: Removed outputs to the console.
+- Merged to master, submitted for lab 11.
 
 2019...
