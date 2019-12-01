@@ -7,8 +7,53 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
-        <h1>Click the fish to view sales data!</h1>
-        <a href="sales.html"><img src="assets/salmon.png" id="heroIndex" /></a>
+        <div id="containerMain">
+            <a href="sales.html"><img src="assets/salmonVertical.png" id="heroVertical" alt="An illustrated salmon" /></a>
+            <div id="containerNavBar">
+              <!-- For buttons without a current working link, they are <input> buttons with a function to call an alert indicating notional functionality. Buttons with a current functional working link will use the <a> tag. -->
+                <!-- <a href=""><img class="boxNavIcon" src="assets/....jpeg" alt="" title="" /></a> -->
+                <input type="image" class="boxNavIcon" id="cutter" src="assets/frostedCookie.jpg" />
+                <input type="image" class="boxNavIcon" id="fish" src="assets/shirt.jpg" />
+                <input type="image" class="boxNavIcon" id="shirt" src="assets/fish.jpg" />
+                <input type="image" class="boxNavIcon" id="frosted" src="assets/cutter.jpeg" />
+                <div id="boxNavLabel">Salmon Cookies: Home</div>
+                
+
+
+            </div>
+            <section id="containerFeed">
+                    <div class="boxFeed">
+                        <img class="boxLeftNarrow" src="assets/chinook.jpg" />
+                        <div class="boxRightWide" id="boxWelcome">
+                          <h2>Welcom to Pat's Salmon Cookies!</h2>
+                          <p>We are the original innovators of salmon infused cookies, born in the PNW! Spicy jalapeno bacon ipsum dolor amet buffalo drumstick burgdoggen, pancetta jowl landjaeger pastrami. Bacon filet mignon tail, frankfurter pork belly short ribs turducken strip steak drumstick pork loin. Fatback strip steak andouille pig swine chicken bacon kevin.</p>
+                        </div>
+                    </div>
+                    <div class="boxFeed">
+                        <img class="boxLeftWide" src="assets/family.jpg" alt="A family" title="Family" />
+                        <div class="boxRightNarrow" id="boxContactInfo">
+                          <h2>Contact Information:</h2>
+                          <h3>USA:</h3>
+                          (360) 867-5309
+                          <h3>International:</h3>
+                          1-800-867-5309
+                        </div>
+                    </div>
+                    <div class="boxFeed">
+                        <img class="boxLeftNarrow" src="assets/cutter.jpeg" alt="A salmon shaped cookie cutter" title="Cookie cutter" />
+                        <div class="boxRightWide" id="boxLocations">
+                            <h2>Our locations, all open 6am - 8pm:</h2>
+                            Seattle: 12 St 34 Ave, Seattle, WA<br>
+                            Tokyo: 56 Rd 78 Ln, Tokyo, Japan<br>
+                            Dubai: 90 Crt 12 Blvd, Dubai, UAE<br>
+                            Paris: 34 Dr 56 Pl, Paris, France<br>
+                            Lima: 78 Ave 90 Ln, Lima, Peru
+                        </div>
+                    </div>
+            </section>
+        </div>
+        <!-- <h1>Click the fish to view sales data!</h1>
+        <a href="sales.html"><img src="assets/salmon.png" id="heroIndex" /></a> -->
     </body>
     <script src="js/app.js"></script>
 </html>

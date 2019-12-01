@@ -3,14 +3,14 @@
     <head>
         <title>Sales Data: Salmon Cookies</title>
         <meta charset="utf-8" />
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" type="text/css" href="css/styleSales.css">
+        <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+        <!-- <link rel="stylesheet" type="text/css" href="css/styleSales.css"> -->
     </head>
     <body>
         <hr>
         <h1>Add a new store to the sales report.</h1>
         <form  id="formNew">
-            <fieldset class="salesForm">
+            <fieldset class="salesForm" id="salesForm">
                 
                 <label for="name">Name of the Store</label>
                 <input type="text" name="name" required><br />
@@ -24,7 +24,7 @@
                 <label for="avg">Average Cookies Sold per Sale</label>
                 <input type="number" name="avg" min=1 step=0.1 required><br />
 
-                <button>Submit</button>
+                <button id="buttonSubmit">Submit</button>
             </fieldset>
         </form>
         <hr>
@@ -36,4 +36,5 @@
         <hr>
     </body>
     <script src="js/app.js"></script>
+    <script src="js/sales.js"></script>
 </html>
