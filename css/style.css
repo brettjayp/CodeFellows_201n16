@@ -19,83 +19,72 @@ body {
     display: inline-block;
     width: 1360px;
     margin: 40px auto auto auto;
-    background-color: #00000020;
+    
 }
 #containerNavBar {
     width: 960px;
     height: 100px;
     margin: 0px 0px auto 40px;
-    background-color: #00000020;
     float: left;
 }
 #containerFeed {
     width: 960px;
     height: auto;
     margin: 40px 0px 0px 40px;
-    background-color: #00000020;
     float: left;
 }
 
 #boxNavLabel {
     width: auto;
     height: 80px;
-    margin: 10px 10px 10px 10px;
-    background-color: #00000020;
-    float: left;
+    color: white;
+    font-size: 2.5em;
+    line-height: 100px;
 }
-.boxNavIcon {
-    width: 80px;
-    height: 80px;
-    margin: 10px 10px 10px 0px;
-    background-color: #00000020;
-    float: right;
+.boxNavIcon, .boxNavIconNO {
+  width: 80px;
+  height: 80px;
+  margin: 10px 10px 10px 0px;
+  float: right;
 }
 
 .boxFeed {
     width: 960px;
     height: 320px;
     margin: 0px 0px 40px 0px;
-    background-color: #00000020;
 }
 .boxLeftNarrow, .boxRightNarrow {
     width: 390px;
     height: 300px;
-    background-color: #00000020;
     margin: 10px 0px 10px 10px;
     float: left;
 }
 .boxLeftWide, .boxRightWide {
     width: 540px;
     height: 300px;
-    background-color: #00000020;
     margin: 10px 0px 10px 10px;
     float: left;
 }
-/* .boxRightNarrow {
-    width: 390px;
-    height: 300px;
-    background-color: #00000020;
-    margin: 10px 0px 10px 10px;
-    float: left;
+#boxWelcome {
+  color: white;
+  font-size: 1.25em;
 }
-.boxRightWide {
-    width: 540px;
-    height: 300px;
-    background-color: #00000020;
-    margin: 10px 0px 10px 10px;
-    float: left;
-} */
+#boxLocations {
+  color: white;
+  font-size: 1.5em;
+}
+#boxContactInfo {
+  line-height: 1em;
+  color: white;
+  font-size: 1.5em;
+}
 
 #heroVertical {
     width: 360px;
     height: auto;
     float: left;
-    background-color: #00000020;
+    
 }
-#heroHorizontal {
-    background-color: #00000020;
-}
-
 
 /* Form */
 input:valid{

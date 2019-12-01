@@ -4,12 +4,12 @@ init
 
 been bad about updating the readme!
 
-20191111
+2019 11 11
 - began converting to constructor function, achieved 90% of goal
 - forgot to ensure what branch I was in, began my work in 'lab06', so I had to copied my new code into master, and acp'ed before battery died
 - total cookies for the day is coming out as a very long number, gotta figure out why
 
-20191113
+2019 11 13
 - branched to 'lab07' since I forgot to before
 - reviewing code to fix long total cookies value, found that I declared the variable as an array, which is not what I wanted
 - fixing total cookies variable to a num fixes the issue
@@ -25,3 +25,11 @@ been bad about updating the readme!
 - all shop:hour sales data now populates as table data, still need to add shop daily totals
 - added totals column
 - all table data populates as would be expected, table backend complete
+
+2019 11 30
+- added remaining labs in .md files, into new directory
+- added all images to index.html
+- images in navbar are clickables, but direct to a prompt() as there's nowhere to take you
+- added locations, hours, contact info, to home page
+- feel I've met the lab09b requirements, going to resubmit now
+- PR into master from lab09b
