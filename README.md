@@ -24,13 +24,7 @@
 - JS, CSS, HTML: Trimmed up some unneeded code. Removed boxes inside of container, render products to container instead of boxes inside of container.
 - JS: Added event handler and round count. On click, we identify the image clicked, increment its click count, increment the current round count, and render three new products. Upon the last click event, we still record our data, we then remove the event listener, and now we no longer display any new products.
 - JS: Added a function to construct and render a list of the result upon completion of the main event.
-- JS: Removed outputs to the console.
-- Merged to master, submitted for lab 11.
-
-2019 12 02
-- JS: Played around with learning what a class is, and implemented it by replacing my constructor function (-ish, as the class still contains a constructor).
-- JS: Played around with learning how to use '=>', and implemented it by converting my random number function to use this.
-
+- JS: Removed outputs to the console.I learned this tonight when my inner child progressed from pushing the button several times, to holding the button down. I was caught off guard when it started 
 2019 12 03
 - JS: No need to implement a method to ensure no images are repeated. I already implemented a function to ensure no images are repeated between rounds, nor duplicates within a round.
 - JS: No need to add feature to track image views, that was one of the first things done.
@@ -42,4 +36,5 @@
   - Chart must be in the section below my three products
   - Chart must not appear until voting rounds have completed
   - STRETCH: Try some additional charting types based off of some of the other data you collected and display them in addition to the required bar chart.
+- npm install chart.js --save
 - 

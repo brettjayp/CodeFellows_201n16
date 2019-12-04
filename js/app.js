@@ -53,12 +53,15 @@ showThree();
 
 // FUNCTION: Render an HTML table with the final data.
 function onComplete(){
-  let resultsContainerEl = addEl('section', false, mainEl);
-  resultsContainerEl.id = 'resultsContainer';
-  addEl('h2', 'Results:', resultsContainerEl);
-  let resultsULEl = addEl('ul', false, resultsContainerEl);
-  catalog.forEach(function(i){addEl('li', `${i.title} had ${i.clickCount} click(s) and was displayed ${i.displayCount} time(s).`, resultsULEl);});
+  draw();
 }
+// function onComplete(){
+//   let resultsContainerEl = addEl('section', false, mainEl);
+//   resultsContainerEl.id = 'resultsContainer';
+//   addEl('h2', 'Results:', resultsContainerEl);
+//   let resultsULEl = addEl('ul', false, resultsContainerEl);
+//   catalog.forEach(function(i){addEl('li', `${i.title} had ${i.clickCount} click(s) and was displayed ${i.displayCount} time(s).`, resultsULEl);});
+// }
 
 // EVENTS: We'll add an event listener that is active while our overall click count does not exceed our determined rounds. Upon reaching the limit, we will remove it.
 displayEl.addEventListener('click', onClick);
@@ -146,3 +149,23 @@ function addEl(element, content, parent){
   parent.appendChild(newElement);
   return newElement;
 }
+
+
+
+
+function draw(){
+  let canvas = document.getElementById('chartResults');
+  let ctx = canvas.getContext('2d');
+  for(let i = 0; i < catalog.length; ++i){
+    nextBar(5, catalog[i]);
+  }
+  // let chart = new Chart(ctx, {
+  //   // products.forEach(function(n){
+  //   //   nextBar(5, );
+  //   });
+  // });
+  function nextBar(x, y){
+    ctx.fillRect(x, 5 + (y * 30), 300, 25);
+  };
+};
+
