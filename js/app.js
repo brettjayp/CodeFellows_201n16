@@ -9,6 +9,22 @@ let lastThree = [-1, -1, -1];
 let newThree = [-1, -1, -1];
 let rounds = [0, 25]; // [current round, total rounds]
 
+// PIMARY CONSTRUCTOR FUNCTION: This is our constructor function to build new products for the main feature. They each will be pushed to the catalog[] array.
+// Playing around with using class instead of the traditional constructor function we're already using
+class Product {
+  constructor(title, source, alt) {
+    // this.title, this.alt, this.src = title, alt, `../assets/${source}`;
+    this.title = title;
+    this.alt = alt;
+    this.src = `../assets/${source}`;
+    this.displayCount = 0;
+    this.clickCount = 0;
+    catalog.push(this);
+  }
+}
+// random number helper
+let randomMinMax = (min, max) => Math.floor((Math.random() * ((max - min))) + min);
+
 // Here we build out catalog of products
 new Product('bag', 'bag.jpg', 'An R2-D2 suitcase');
 new Product('banana', 'banana.jpg', 'A banana slicer');
@@ -43,17 +59,7 @@ function onComplete(){
   let resultsULEl = addEl('ul', false, resultsContainerEl);
   catalog.forEach(function(i){addEl('li', `${i.title} had ${i.clickCount} click(s) and was displayed ${i.displayCount} time(s).`, resultsULEl);});
 }
-// PIMARY CONSTRUCTOR FUNCTION: This is our constructor function to build new products for the main feature. They each will be pushed to the catalog[] array.
-function Product(title, source, alt){
-  this.title = title;
-  this.alt = alt;
-  this.src = `../assets/${source}`;
-  
-  this.displayCount = 0;
-  this.clickCount = 0;
-  
-  catalog.push(this);
-}
+
 // EVENTS: We'll add an event listener that is active while our overall click count does not exceed our determined rounds. Upon reaching the limit, we will remove it.
 displayEl.addEventListener('click', onClick);
 // EVENTS: FUNCTION: On a valid click, we'll identify the object, increase its clickCount, increase the round count, and show three new products. If we've arrived at our round limit, we'll remove the event listener after rendering the
@@ -139,8 +145,4 @@ function addEl(element, content, parent){
   }
   parent.appendChild(newElement);
   return newElement;
-}
-// HELPER FUNCTION: Return a random integer within given parameters.
-function randomMinMax(min, max){
-  return Math.floor((Math.random() * ((max - min))) + min); // could include a '+1' but it sometimes breaks here
 }
