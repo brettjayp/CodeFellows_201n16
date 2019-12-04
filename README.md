@@ -27,4 +27,7 @@
 - JS: Removed outputs to the console.
 - Merged to master, submitted for lab 11.
 
-2019...
+2019 12 02
+- JS: Played around with learning what a class is, and implemented it by replacing my constructor function (-ish, as the class still contains a constructor).
+- JS: Played around with learning how to use '=>', and implemented it by converting my random number function to use this.
+
