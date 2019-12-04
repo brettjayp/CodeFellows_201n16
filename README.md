@@ -31,3 +31,15 @@
 - JS: Played around with learning what a class is, and implemented it by replacing my constructor function (-ish, as the class still contains a constructor).
 - JS: Played around with learning how to use '=>', and implemented it by converting my random number function to use this.
 
+2019 12 03
+- JS: No need to implement a method to ensure no images are repeated. I already implemented a function to ensure no images are repeated between rounds, nor duplicates within a round.
+- JS: No need to add feature to track image views, that was one of the first things done.
+- For lab 12, I need to accomplish:
+  - Add a chart.js chart that displays:
+    - Vote totals for each product
+    - Display totals for each product/
+    - In bar chart format
+  - Chart must be in the section below my three products
+  - Chart must not appear until voting rounds have completed
+  - STRETCH: Try some additional charting types based off of some of the other data you collected and display them in addition to the required bar chart.
+- 
