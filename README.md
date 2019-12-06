@@ -25,6 +25,7 @@
 - JS: Added event handler and round count. On click, we identify the image clicked, increment its click count, increment the current round count, and render three new products. Upon the last click event, we still record our data, we then remove the event listener, and now we no longer display any new products.
 - JS: Added a function to construct and render a list of the result upon completion of the main event.
 - JS: Removed outputs to the console.I learned this tonight when my inner child progressed from pushing the button several times, to holding the button down. I was caught off guard when it started 
+
 2019 12 03
 - JS: No need to implement a method to ensure no images are repeated. I already implemented a function to ensure no images are repeated between rounds, nor duplicates within a round.
 - JS: No need to add feature to track image views, that was one of the first things done.
@@ -37,4 +38,10 @@
   - Chart must not appear until voting rounds have completed
   - STRETCH: Try some additional charting types based off of some of the other data you collected and display them in addition to the required bar chart.
 - npm install chart.js --save
-- 
+
+2019 12 05
+- JS: Finished playing with a chart.js function to draw a chart showing bars that represent views and clicks, clicks overlapping at the bottom of views in a contrasting color. Struggling with labels.
+- JS: Chart was being made with draw functions (rectangles and text). Done playing with drawing, time to move on to an actual chart.
+- JS: Built a basic chart that takes in two datasets, vies and clicks, and labels by product titles, showing the views and clicks side by side.
+- Built enough to warrant submission for lab 12. ACP'ing, pulling, submitting.
+
