@@ -8,6 +8,7 @@ let catalog = [];
 let lastThree = [-1, -1, -1];
 let newThree = [-1, -1, -1];
 let rounds = [0, 25]; // [current round, total rounds]
+let jaySawn = [];
 
 // PIMARY CONSTRUCTOR FUNCTION: This is our constructor function to build new products for the main feature. They each will be pushed to the catalog[] array.
 // Playing around with using class instead of the traditional constructor function we're already using
@@ -51,6 +52,30 @@ new Product('wine-glass', 'wine-glass.jpg', 'na');
 showThree();
 // // // CALL OUR FEATURE FUNCTION // // //
 
+// on completions of clicks:
+function onComplete(){
+  if(localStorage.getItem('busMallCatalog')){
+    // let getJaySawn = localStorage.getItem('busMallCatalog');
+    jaySawn = JSON.parse(localStorage.getItem('busMallCatalog'));
+    for(let i = 0; i < catalog.length; ++i){
+      jaySawn[i].displayCount+= catalog[i].displayCount;
+      jaySawn[i].clickCount+= catalog[i].clickCount;
+    }
+  } else{
+    catalog.forEach(function(n){
+      jaySawn.push(n);
+    });
+    // jaySawn.push(catalog);
+  }
+  console.log(jaySawn);
+  let setJaySawn = [];
+  setJaySawn.push(JSON.stringify(jaySawn));
+  console.log(`have stringified jaySawn:\n${setJaySawn}`);
+  localStorage.setItem('busMallCatalog', setJaySawn);
+
+  drawChart();
+}
+
 // EVENTS: We'll add an event listener that is active while our overall click count does not exceed our determined rounds. Upon reaching the limit, we will remove it.
 displayEl.addEventListener('click', onClick);
 // EVENTS: FUNCTION: On a valid click, we'll identify the object, increase its clickCount, increase the round count, and show three new products. If we've arrived at our round limit, we'll remove the event listener after rendering the
@@ -68,7 +93,7 @@ function onClick(event){
     showThree();
   } else if(rounds[0] >= rounds[1]){
     displayEl.removeEventListener('click', onClick);
-    drawChart();
+    onComplete();
   }
 }
 // PRIMARY FUNCTION: Show three new products to the page. They will not repeat any of the previous round's images, and there will be no duplicates displayed. We also reset the newThree[] array and overwrite the lastThree[] array for tracking and to assist in avoiding repeats and duplicates.
@@ -143,7 +168,7 @@ function drawChart(){
   let dataViews = [];
   let dataClicks = [];
   let labels = [];
-  catalog.forEach(function(n){
+  jaySawn.forEach(function(n){
     dataViews.push(n.displayCount);
     dataClicks.push(n.clickCount);
     labels.push(n.title);
