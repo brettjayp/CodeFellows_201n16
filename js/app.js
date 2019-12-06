@@ -51,15 +51,6 @@ new Product('wine-glass', 'wine-glass.jpg', 'na');
 showThree();
 // // // CALL OUR FEATURE FUNCTION // // //
 
-// FUNCTION: Render an HTML table with the final data.
-function onComplete(){
-  let resultsContainerEl = addEl('section', false, mainEl);
-  resultsContainerEl.id = 'resultsContainer';
-  addEl('h2', 'Results:', resultsContainerEl);
-  let resultsULEl = addEl('ul', false, resultsContainerEl);
-  catalog.forEach(function(i){addEl('li', `${i.title} had ${i.clickCount} click(s) and was displayed ${i.displayCount} time(s).`, resultsULEl);});
-}
-
 // EVENTS: We'll add an event listener that is active while our overall click count does not exceed our determined rounds. Upon reaching the limit, we will remove it.
 displayEl.addEventListener('click', onClick);
 // EVENTS: FUNCTION: On a valid click, we'll identify the object, increase its clickCount, increase the round count, and show three new products. If we've arrived at our round limit, we'll remove the event listener after rendering the
@@ -77,7 +68,7 @@ function onClick(event){
     showThree();
   } else if(rounds[0] >= rounds[1]){
     displayEl.removeEventListener('click', onClick);
-    onComplete();
+    drawChart();
   }
 }
 // PRIMARY FUNCTION: Show three new products to the page. They will not repeat any of the previous round's images, and there will be no duplicates displayed. We also reset the newThree[] array and overwrite the lastThree[] array for tracking and to assist in avoiding repeats and duplicates.
@@ -145,4 +136,33 @@ function addEl(element, content, parent){
   }
   parent.appendChild(newElement);
   return newElement;
+}
+
+// RENDER FUNCTION: chart.js function to render chart
+function drawChart(){
+  let dataViews = [];
+  let dataClicks = [];
+  let labels = [];
+  catalog.forEach(function(n){
+    dataViews.push(n.displayCount);
+    dataClicks.push(n.clickCount);
+    labels.push(n.title);
+  });
+  let canvas = document.getElementById('chartResults');
+  let ctx = canvas.getContext('2d');
+  let chartCatalog = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Views',
+        data: dataViews,
+        backgroundColor: 'rgba(0, 0, 255, 0.5)'
+      }, {
+        label: 'Clicks',
+        data: dataClicks,
+        backgroundColor: 'rgba(0, 0, 255, 0.2)'
+      }],
+    },
+  });
 }
