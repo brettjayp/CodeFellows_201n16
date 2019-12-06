@@ -157,15 +157,40 @@ function draw(){
   let canvas = document.getElementById('chartResults');
   let ctx = canvas.getContext('2d');
   for(let i = 0; i < catalog.length; ++i){
-    nextBar(5, catalog[i]);
+    nextViews(i, catalog[i].displayCount * 40); // last bar ends at x=910px
+    nextClicks(i, catalog[i].clickCount * 40); // last bar ends at x=910px
+    // addText(catalog[i].title, catalog.length);
   }
-  // let chart = new Chart(ctx, {
-  //   // products.forEach(function(n){
-  //   //   nextBar(5, );
-  //   });
-  // });
-  function nextBar(x, y){
-    ctx.fillRect(x, 5 + (y * 30), 300, 25);
-  };
-};
-
+  function nextViews(x, views){
+    ctx.fillStyle = 'rgb(200, 0, 0)';
+    if(views >= 50){
+      ctx.fillRect(15 + (x * 45), 400, 40, views * -1);
+    } else{
+      ctx.fillRect(15 + (x * 45), 400, 40, -20);
+    }
+  }
+  function nextClicks(x, clicks){
+    ctx.fillStyle = 'rgb(0, 200, 0)';
+    if(clicks >= 50){
+      ctx.fillRect(15 + (x * 45), 400, 40, clicks * -1);
+    } else{
+      ctx.fillRect(15 + (x * 45), 400, 40, -10);
+    }
+  }
+  function addText(product, length){
+    ctx.font = '16px Serif';
+    for(let i = 0; i < 10; ++i){
+      if(i === 0){
+        ctx.fillText('__ 0', 920, 400);
+      } else {
+        ctx.fillText(`__ ${i}`, 920, (400 - (i * 40)));
+      }
+    }
+    ctx.font = '12px Serif';
+    for(let i = 0; i < length; ++i){
+      ctx.fillText(product, (15 + (45 * i)), 420);
+    }
+  }
+  ctx.fillStyle = 'rgb(0, 0, 200)';
+  ctx.fillRect(0, 500, 100, 100);
+}
