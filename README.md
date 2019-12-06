@@ -39,9 +39,17 @@
   - STRETCH: Try some additional charting types based off of some of the other data you collected and display them in addition to the required bar chart.
 - npm install chart.js --save
 
-2019 12 05
+2019 12 05 Lab12
 - JS: Finished playing with a chart.js function to draw a chart showing bars that represent views and clicks, clicks overlapping at the bottom of views in a contrasting color. Struggling with labels.
 - JS: Chart was being made with draw functions (rectangles and text). Done playing with drawing, time to move on to an actual chart.
 - JS: Built a basic chart that takes in two datasets, vies and clicks, and labels by product titles, showing the views and clicks side by side.
 - Built enough to warrant submission for lab 12. ACP'ing, pulling, submitting.
 
+2019 12 05 Lab13
+- JS: Build a new array, jaySawn, and a couple other helpers for interfacing with localStorage.
+- JS: If my localStorage key exists, I parse it into jaySawn. I then '+=' the displayCount and clickCount values from catalog into the jaySawn objects.
+- JS: If it doesn't exist, I build jaySawn with all my catalog objects.
+- JS: I over right my local storage key value pair with the new (or newly updated) jaySawn object.
+- JS: I then build by chart based off of jaySawn, to always show the aggregate data.
+- JS: This is all done upon completion of clicks, and it persists across refresh/reload and browser closures.
+- Submitted, closing PR.
