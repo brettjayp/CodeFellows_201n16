@@ -1,9 +1,7 @@
-/* eslint-disable indent */ /* eslint-disable no-trailing-spaces */ /* eslint-disable no-unused-vars */ /* eslint-disable no-multi-spaces */
 'use strict';
 
 // DOM objects
 const displayEl = document.getElementById('displayContainer');
-const mainEl = document.getElementById('main');
 let catalog = [];
 let lastThree = [-1, -1, -1];
 let newThree = [-1, -1, -1];
@@ -151,17 +149,6 @@ function renderProduct(source, position){
   }
   return newImg;
 }
-// HELPER FUNCTION: Add a new element.
-function addEl(element, content, parent){
-  let newElement = document.createElement(element);
-  if(content){
-      let newContent = document.createTextNode(content);
-      newElement.appendChild(newContent);
-      // newElement.textContent = content; // could also do it this way
-  }
-  parent.appendChild(newElement);
-  return newElement;
-}
 
 // RENDER FUNCTION: chart.js function to render chart
 function drawChart(){
@@ -175,6 +162,7 @@ function drawChart(){
   });
   let canvas = document.getElementById('chartResults');
   let ctx = canvas.getContext('2d');
+  /* eslint-disable-next-line no-unused-vars */ /* eslint-disable-next-line no-undef */
   let chartCatalog = new Chart(ctx, {
     type: 'bar',
     data: {
