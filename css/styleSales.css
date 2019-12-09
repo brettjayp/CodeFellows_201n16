@@ -1,3 +1,7 @@
+html{
+  font-family: "Helvetica";
+}
+
 #listsContainer {
     color: blue;
     display: inline-block;
