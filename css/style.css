@@ -1,0 +1,25 @@
+html {
+    background-image: url("../Media/lightBarsPixelated1920.png");
+    text-align: center;
+}
+
+main {
+    background-color: #00000050;
+    color: white;
+    text-shadow: 2px 2px 1px #000000FF;
+    text-align: left;
+    width: 960px;
+    padding: 20px;
+    margin: 0 auto;
+    border: solid white 5px;
+}
+
+h1 {
+    color: black;
+    text-shadow: 2px 2px 1px #FFFFFFFF;
+    font-size: 3.25em;
+
+}
+h2 {
+    font-weight: bold;
+}
