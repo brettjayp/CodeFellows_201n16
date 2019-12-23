@@ -1,0 +1,21 @@
+body
+{
+    background-color: royalblue;
+}
+
+p{
+
+    background-color: yellow;
+    text-align:  auto;
+}
+
+h1{
+    color: red;
+    font-size: 50px;
+    text-align: center;
+}
+
+h2{
+    color: rgb(0, 255, 221);
+    font-size: 30px;
+}
