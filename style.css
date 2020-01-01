@@ -1,0 +1,157 @@
+body {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #00000060;
+}
+p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #000000BB;
+}
+
+#navBar {
+    /* display: inline; */
+    width: 960px;
+    height: 45px;
+    margin: auto;
+    
+}
+.iconRight{ 
+    float: right;
+    margin: 10px 0px 11px 2px;
+}
+#iconGap{
+    float: right;
+    margin: 10px 8px 11px 2px;
+}
+.iconLeft{
+    float: left;
+    margin-right: 5px;
+}
+#delicious{
+    font-size: 20px;
+    
+}
+
+.pageBreak{
+    margin: 20px auto auto auto;
+    width: 960px;
+    height: 12px;
+    background-repeat: repeat-x;
+    background: url(lab-assets/hr-img.png);
+}
+#titleBar {
+    text-align: left;
+    width: 960px;
+    font-size: 0.75em;
+    height: 70px;
+    margin: 40px auto auto auto;
+    
+}
+#title{
+    float: left;
+
+}
+#bigTitle{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+    font-weight: bold;
+    font-size: 4em;
+}
+#print{
+    float: right;
+    margin: 58px 0px auto auto;
+}
+
+#heroImage {
+    width: 960px;
+    height: auto;
+    margin: 20px auto auto auto;
+}
+#text {
+    text-align: left;
+    text-indent: 40px;
+    width: 960px;
+    height: auto;
+    margin: 20px auto auto auto;
+}
+#checklist {
+    width: 960px;
+    height: 300px;
+    margin: 20px auto auto auto;
+    background: url(lab-assets/list-bg.png);
+    background-size: 960px 300px;
+    /* background-repeat: repeat-y; */
+}
+#checkBox {
+    line-height: 30px;
+    font-size: 25px;
+    columns: 2;
+    text-align: left;
+    margin: auto 60px 0px 80px;
+    padding-top: 36px;
+    /* -webkit-columns: 2; */
+    /* -moz-columns: 2; */
+}
+#bio {
+    width: 960px;
+    height: 130px;
+    margin: 20px auto auto auto;
+    /* background-color: #00000020; */
+}
+#picture{
+    float: left;
+    margin: auto 30px auto auto;
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+    
+}
+#textBio{
+    float: left;
+    width: 600px;
+    color: #000000BB;
+
+    /* background-color: #00000020; */
+    text-align: left;
+}
+#vanessa{
+    font-weight: bold;
+    font-size: 1.75em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#about{
+    line-height: 2em;
+    /* font-size: 1.25em; */
+}
+#share{
+    float: right;
+    color: white;
+    background-color: #b4745c;
+    line-height: 40px;
+    width: 200px;
+    height: 40px;
+    margin: 30px 0px;
+}
+
+#logoOnHR {
+    /* margin-left: auto;
+    margin-right: auto; */
+    border: 5px solid white;
+    z-index: 1;
+}
+#hrBreak {
+    /* display: inline-block; */
+    width: 960px;
+    position: relative;
+    bottom: -30px;
+    z-index: -1;
+    /* color: gray; */
+}
+#footerBar {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 960px;
+    height: 60px;
+    margin: 20px auto auto auto;
+    
+}
